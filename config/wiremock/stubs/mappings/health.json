@@ -1,0 +1,11 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "/health"
+  },
+  "response": {
+    "status": 200,
+    "bodyFileName": "health.json",
+    "transformers": ["body-transformer"]
+  }
+}
