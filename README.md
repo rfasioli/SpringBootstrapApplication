@@ -24,8 +24,6 @@
 Este projeto apresenta uma aplicação Bootstrap consumindo serviços externos,
 mockados por uma aplicação em wiremock.
 
-![C4L1][6]
-
 ``` mermaid
 C4Context
     Person(customerA, "Usuário", "Um usuário do sistema.")
@@ -40,7 +38,27 @@ contexto. Os módulos são:
  - **api**: aplicação que fornece os rescursos *rest*. 
  - **messaging**: aplicação para processamento assíncrono do domínio.
  
-![C4L2][7]
+``` mermaid
+C4Container
+Person(customerA, "Usuário", "Um usuário do sistema.")
+
+    Container_Boundary(c1, "Spring Bootstrap App") {
+        Container(api, "BootstrapAPI", "Kotlin, Springboot", "Atende requisições rest do sistema")
+        ContainerQueue(rabbit, "Queues", "RabbitMQ", "Filas para processamento assincrono")
+        Container(messaging, "Web Application", "Kotlin, Springboot", "Processa mensagens assincronas do sistema")
+        ContainerDb(database, "Database", "Postgres Database", "Armazena informações do sistema")
+    }
+
+    System_Ext(SystemWiremock, "Wiremock App", "Mock para serviços externos.")
+
+    Rel(customerA, api, "Requisição da API [REST]")
+    Rel(api, database, "Manipula dados [Spring Data]")
+    Rel(api, SystemWiremock, "Requisição da API [REST]")
+    Rel(api, rabbit, "Publica Evento [Spring Cloud]")
+    Rel_Back(rabbit, messaging, "Consome Evento [Spring Cloud]")
+    Rel(messaging, SystemWiremock, "Requisição da API [REST]")
+    Rel(messaging, database, "Manipula dados [Spring Data]")
+```
 
 Cada módulo tem seus pacotes representando a estrutura da arquitetura hexagonal:  
 
@@ -125,5 +143,3 @@ $ docker run -p 8080:8080 -it bootstrap
 [3]: ./config/assets/images/pg-ipaddress.png
 [4]: ./config/assets/images/pgadmin-config.png
 [5]: ./config/assets/images/hexagonal-arch.png
-[6]: ./config/assets/images/SDABootstrap-C4L1.png
-[7]: ./config/assets/images/SDABoostrap-C4L2.png
