@@ -24,7 +24,7 @@ val h2Version = "2.1.214"
 val kotlinFakerVersion = "1.11.0"
 val r2dbcH2Version = "1.0.0.RC1"
 val serializationCoreVersion = "1.6.0"
-val springDocVersion = "1.6.9"
+val springDocVersion = "1.7.0"
 val springmockkVersion = "3.1.1"
 
 //val datetimeVersion = "0.4.0"
