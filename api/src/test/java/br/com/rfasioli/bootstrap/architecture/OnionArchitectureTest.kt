@@ -15,10 +15,10 @@ class OnionArchitectureTest {
         .domainServices("..domain.usecase..")
         .applicationServices("..application..")
         .adapter("consumer", "..adapter.input.messaging..")
-        .adapter("rest", "..adapter.input.rest..")
+        .adapter("webresource", "..adapter.input.web..")
         .adapter("producer", "..adapter.input.messaging..")
         .adapter("persistence", "..adapter.output.persistence..")
-        .adapter("webclient", "..adapter.output.webclient..")
+        .adapter("webclient", "..adapter.output.web..")
         .allowEmptyShould(true)
 
 }

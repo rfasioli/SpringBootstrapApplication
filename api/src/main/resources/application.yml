@@ -1,4 +1,15 @@
 spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+  jackson:
+    default-property-inclusion: non_null
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/bootstrap
+    username: admin
+    password: root
+    properties:
+      schema: bootstrap
 
 server:
   port: 8080
