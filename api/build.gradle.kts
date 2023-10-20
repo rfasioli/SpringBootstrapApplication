@@ -23,7 +23,7 @@ val fixtureVersion = "1.2.0"
 val h2Version = "2.1.214"
 val kotlinFakerVersion = "1.11.0"
 val r2dbcH2Version = "1.0.0.RC1"
-val serializationCoreVersion = "1.3.3"
+val serializationCoreVersion = "1.6.0"
 val springDocVersion = "1.6.9"
 val springmockkVersion = "3.1.1"
 
