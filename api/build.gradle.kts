@@ -20,7 +20,7 @@ tasks.jar {
 val archunitVersion = "1.1.0"
 val coroutinesVersion = "1.7.3"
 val fixtureVersion = "1.2.0"
-val h2Version = "2.1.214"
+val h2Version = "2.2.224"
 val kotlinFakerVersion = "1.15.0"
 val r2dbcH2Version = "1.0.0.RELEASE"
 val serializationCoreVersion = "1.6.0"
