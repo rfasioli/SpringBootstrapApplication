@@ -56,7 +56,7 @@ dependencies {
 //    implementation("org.springframework.cloud:spring-cloud-stream")
 //    implementation("org.springframework.cloud:spring-cloud-stream-binder-rabbit")
 
-    implementation("org.springframework.boot:spring-boot-properties-migrator:3.0.3")
+    implementation("org.springframework.boot:spring-boot-properties-migrator:3.1.5")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("com.tngtech.archunit:archunit-junit5:$archunitVersion")
