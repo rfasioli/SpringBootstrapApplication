@@ -1,4 +1,9 @@
-import org.jetbrains.kotlin.storage.CacheResetOnProcessCanceled.enabled
+plugins {
+    id("org.springframework.boot")
+
+    kotlin("jvm")
+    kotlin("plugin.spring")
+}
 
 springBoot {
     buildInfo()

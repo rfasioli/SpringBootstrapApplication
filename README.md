@@ -138,6 +138,12 @@ $ ./gradlew docker
 $ docker run -p 8080:8080 -it bootstrap
 ```
 
+## Referências
+> - https://kotlindays.com/2019/12/06/multi-module-spring-boot-in-kotlin-dsl/index.html
+> - https://www.archunit.org/userguide/html/000_Index.html
+> - https://github.com/TNG/ArchUnit-Examples/blob/main/example-junit5/src/test/java/com/tngtech/archunit/exampletest/junit5/CodingRulesTest.java
+
+
 [1]: https://sdkman.io/install
 [2]: https://sdkman.io/usage
 [3]: ./config/assets/images/pg-ipaddress.png

@@ -1,5 +1,13 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url = uri("https://repo.spring.io/milestone") }
+        maven { url = uri("https://repo.spring.io/snapshot") }
+    }
+}
+
 plugins {
     val kotlinVersion = "1.9.10"
 
@@ -19,13 +27,6 @@ plugins {
     id("com.palantir.docker") version "0.33.0" apply false
 }
 
-group = "br.com.rfasioli"
-version = "0.0.1-SNAPSHOT"
-
-java {
-    sourceCompatibility = JavaVersion.VERSION_20
-}
-
 tasks.bootJar {
     enabled = false
 }
@@ -39,15 +40,13 @@ allprojects {
         maven { url = uri("https://repo.spring.io/milestone") }
         maven { url = uri("https://repo.spring.io/snapshot") }
     }
-}
 
-subprojects {
-    apply(plugin = "org.jetbrains.kotlin.jvm")
-    apply(plugin = "org.springframework.boot")
-    apply(plugin = "io.spring.dependency-management")
+    group = "br.com.rfasioli"
+    version = "0.0.1-SNAPSHOT"
 
-    dependencies {
-        implementation(kotlin("stdlib-jdk8"))
+    tasks.withType<JavaCompile> {
+        sourceCompatibility = "20"
+        targetCompatibility = "20"
     }
 
     tasks.withType<KotlinCompile> {
@@ -55,6 +54,18 @@ subprojects {
             freeCompilerArgs = listOf("-Xjsr305=strict")
             jvmTarget = "20"
         }
+    }
+}
+
+subprojects {
+    repositories {
+        mavenCentral()
+        maven { url = uri("https://repo.spring.io/milestone") }
+        maven { url = uri("https://repo.spring.io/snapshot") }
+    }
+
+    apply {
+        plugin("io.spring.dependency-management")
     }
 }
 

@@ -1,0 +1,25 @@
+spring:
+
+server:
+  port: 8080
+
+logging:
+  level:
+    org:
+      hibernate:
+        type: debug
+      springframework:
+        r2dbc: DEBUG
+
+management:
+  endpoint:
+    health:
+      group:
+        custom:
+          show-details: always
+          show-components: always
+          status.http-mapping.up: 207
+  endpoints:
+    web:
+      exposure:
+        include: "*"
