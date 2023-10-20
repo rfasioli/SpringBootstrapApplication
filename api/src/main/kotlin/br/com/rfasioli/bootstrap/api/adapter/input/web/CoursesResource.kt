@@ -8,7 +8,7 @@ import br.com.rfasioli.bootstrap.api.adapter.input.web.resources.PostCourseEnrol
 import br.com.rfasioli.bootstrap.api.application.port.input.CourseEnroller
 import br.com.rfasioli.bootstrap.api.application.port.input.CoursesByStageFinder
 import br.com.rfasioli.bootstrap.api.domain.model.Stage
-import br.com.sda.bootstrap.sdabootstrap.api.app.adapters.`in`.webflux.springdoc.CoursesResourceSpringdoc
+import br.com.rfasioli.bootstrap.api.adapter.input.web.springdoc.CoursesResourceSpringdoc
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PostMapping

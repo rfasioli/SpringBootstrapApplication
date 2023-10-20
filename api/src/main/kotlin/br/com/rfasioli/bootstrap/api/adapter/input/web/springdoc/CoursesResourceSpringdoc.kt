@@ -1,9 +1,9 @@
-package br.com.sda.bootstrap.sdabootstrap.api.app.adapters.`in`.webflux.springdoc
+package br.com.rfasioli.bootstrap.api.adapter.input.web.springdoc
 
-import br.com.sda.bootstrap.sdabootstrap.api.app.adapters.`in`.webflux.resources.GetCourseResourceResponse
-import br.com.sda.bootstrap.sdabootstrap.api.app.adapters.`in`.webflux.resources.PostCourseEnrollRequest
-import br.com.sda.bootstrap.sdabootstrap.api.app.adapters.`in`.webflux.resources.PostCourseEnrollResponse
-import br.com.sda.bootstrap.sdabootstrap.api.core.domain.Stage
+import br.com.rfasioli.bootstrap.api.adapter.input.web.resources.GetCourseResourceResponse
+import br.com.rfasioli.bootstrap.api.adapter.input.web.resources.PostCourseEnrollRequest
+import br.com.rfasioli.bootstrap.api.adapter.input.web.resources.PostCourseEnrollResponse
+import br.com.rfasioli.bootstrap.api.domain.model.Stage
 import io.swagger.v3.oas.annotations.Operation
 import io.swagger.v3.oas.annotations.tags.Tag
 import reactor.core.publisher.Flux
