@@ -16,12 +16,15 @@ server:
 
 logging:
   level:
-
+    root: INFO
     org:
       hibernate:
-        type: debug
+        type: DEBUG
       springframework:
         r2dbc: DEBUG
+      springdoc: DEBUG
+    io:
+      swagger: DEBUG
 
 management:
   endpoint:
