@@ -5,7 +5,7 @@ spring:
   jackson:
     default-property-inclusion: non_null
   r2dbc:
-    url: r2dbc:postgresql://localhost:5432/bootstrap
+    url: r2dbc:postgresql://localhost:5432/postgres
     username: admin
     password: root
     properties:
@@ -16,6 +16,7 @@ server:
 
 logging:
   level:
+
     org:
       hibernate:
         type: debug

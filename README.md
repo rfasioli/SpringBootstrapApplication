@@ -70,7 +70,7 @@ Após baixar o repositório, você pode configurar o ambiente utilizando o SDKMa
 caso não tenha instalado basta seguir as instruções em [SDKMan Installation][1].
 
 ``` bash
-$ sdk env install
+sdk env install
 ```
 
 > **Dica:** você também pode habilitar o `sdkman_auto_env=true` editando as configurações
@@ -87,26 +87,26 @@ estes contêineres podem ser iniciados pelo docker-compose, configurado na
 raiz deste projeto.
 ``` bash
 # configurando ambiente docker e executando contêineres
-$ docker-compose up -d
+docker-compose up -d
 
 # iniciando contêineres (necessário ter configurado os contêineres anteriormente)
-$ docker-compose start
+docker-compose start
 
 # parando contêineres
-$ docker-compose stop
+docker-compose stop
 
 # parando reiniciando
-$ docker-compose restart
+docker-compose restart
 
 # removendo componentes configurados pelo compose
-$ docker-compose down
+docker-compose down
 ```
 
 ### Configurando o PGAdmin
 Para configurar o PGAdmin, primeiro você precisará obter o endereço ip que 
 o postgres está sendo executado, para isso digite o comando:
 ``` bash
-$ docker inspect $(docker ps -f name=bootstrap_postgres -q) | grep IPAddress
+docker inspect $(docker ps -f name=bootstrap_postgres -q) | grep IPAddress
 ```
 Tendo como resultado algo similiar:
 
@@ -120,22 +120,22 @@ pelo comando anterior:
 ### Db Migration
 A criação da estrutura do banco de dados é feita pelo Flyway Migrate. Para executar o migration dos scripts basta executar o comando:
 ``` bash
-$ DB_URL=jdbc:postgresql://localhost:5432/postgres DB_USER=admin DB_PASSWORD=root ./gradlew flywayMigrate
+DB_URL=jdbc:postgresql://localhost:5432/postgres DB_USER=admin DB_PASSWORD=root ./gradlew flywayMigrate
 ```
 
 ## Executando a aplicação
 ``` bash
 # Executar módulo API
-$ ./gradlew api:bootRun
+./gradlew api:bootRun
 ```
 
 ## Imagem docker
 ``` bash
 ### Gerar imagem
-$ ./gradlew docker
+./gradlew docker
 
 ### Executar
-$ docker run -p 8080:8080 -it bootstrap
+docker run -p 8080:8080 -it bootstrap
 ```
 
 ## Referências
