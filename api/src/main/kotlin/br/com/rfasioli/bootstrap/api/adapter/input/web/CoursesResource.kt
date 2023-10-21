@@ -5,8 +5,8 @@ import br.com.rfasioli.bootstrap.api.adapter.input.web.mapper.toRequirement
 import br.com.rfasioli.bootstrap.api.adapter.input.web.resources.GetCourseResourceResponse
 import br.com.rfasioli.bootstrap.api.adapter.input.web.resources.PostCourseEnrollRequest
 import br.com.rfasioli.bootstrap.api.adapter.input.web.resources.PostCourseEnrollResponse
-import br.com.rfasioli.bootstrap.api.application.port.input.CourseEnroller
-import br.com.rfasioli.bootstrap.api.application.port.input.CoursesByStageFinder
+import br.com.rfasioli.bootstrap.api.domain.port.input.CourseEnroller
+import br.com.rfasioli.bootstrap.api.domain.port.input.CoursesByStageFinder
 import br.com.rfasioli.bootstrap.api.domain.model.Stage
 import br.com.rfasioli.bootstrap.api.adapter.input.web.springdoc.CoursesResourceSpringdoc
 import org.springframework.http.HttpStatus

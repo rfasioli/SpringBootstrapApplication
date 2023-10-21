@@ -1,4 +1,4 @@
-package br.com.rfasioli.bootstrap.api.application.port.output
+package br.com.rfasioli.bootstrap.api.domain.port.output
 
 import br.com.rfasioli.bootstrap.api.domain.model.EnrollmentAggregation
 import reactor.core.publisher.Mono

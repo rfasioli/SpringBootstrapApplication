@@ -1,6 +1,6 @@
 package br.com.rfasioli.bootstrap.api.adapter.input.web.mapper
 
-import br.com.sda.bootstrap.sdabootstrap.api.core.domain.Gender
+import br.com.rfasioli.bootstrap.api.domain.model.Gender
 
 fun genderFromString(source: String?) =
     source

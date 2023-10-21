@@ -1,4 +1,4 @@
-package br.com.rfasioli.bootstrap.api.application.port.input
+package br.com.rfasioli.bootstrap.api.domain.port.input
 
 import br.com.rfasioli.bootstrap.api.domain.model.Course
 import br.com.rfasioli.bootstrap.api.domain.model.Stage

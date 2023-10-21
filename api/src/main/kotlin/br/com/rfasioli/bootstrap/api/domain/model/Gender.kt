@@ -1,4 +1,4 @@
-package br.com.sda.bootstrap.sdabootstrap.api.core.domain
+package br.com.rfasioli.bootstrap.api.domain.model
 
 enum class Gender {
     MALE,
