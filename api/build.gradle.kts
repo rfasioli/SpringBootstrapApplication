@@ -53,7 +53,6 @@ dependencies {
     runtimeOnly("org.postgresql:postgresql")
 
     implementation("org.springdoc:springdoc-openapi-starter-webflux-ui:$springDocVersion")
-//    implementation("org.springdoc:springdoc-openapi-starter-kotlin:$springDocVersion")
     implementation("org.springdoc:springdoc-openapi-starter-common:$springDocVersion")
 
 
