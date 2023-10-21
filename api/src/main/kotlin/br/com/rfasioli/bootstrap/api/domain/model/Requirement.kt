@@ -1,6 +1,5 @@
 package br.com.rfasioli.bootstrap.api.domain.model
 
-import br.com.sda.bootstrap.sdabootstrap.api.core.domain.Gender
 import java.time.LocalDate
 import java.util.UUID
 

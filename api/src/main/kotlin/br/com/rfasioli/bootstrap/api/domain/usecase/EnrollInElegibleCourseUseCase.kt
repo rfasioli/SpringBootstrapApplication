@@ -1,9 +1,9 @@
 package br.com.rfasioli.bootstrap.api.domain.usecase
 
 import br.com.rfasioli.bootstrap.api.application.exception.EnrollmentNotElegibleException
-import br.com.rfasioli.bootstrap.api.application.port.input.CourseEnroller
-import br.com.rfasioli.bootstrap.api.application.port.output.CourseFetcher
-import br.com.rfasioli.bootstrap.api.application.port.output.EnrollmentAnalyzer
+import br.com.rfasioli.bootstrap.api.domain.port.input.CourseEnroller
+import br.com.rfasioli.bootstrap.api.domain.port.output.CourseFetcher
+import br.com.rfasioli.bootstrap.api.domain.port.output.EnrollmentAnalyzer
 import br.com.rfasioli.bootstrap.api.domain.model.EnrollmentAggregation
 import br.com.rfasioli.bootstrap.api.domain.model.Requirement
 import org.springframework.stereotype.Service
