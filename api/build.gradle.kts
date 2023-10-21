@@ -22,9 +22,10 @@ val coroutinesVersion = "1.7.3"
 val fixtureVersion = "1.2.0"
 val h2Version = "2.2.224"
 val kotlinFakerVersion = "1.15.0"
+val kotlinLoggingVersion = "2.0.11"
 val r2dbcH2Version = "1.0.0.RELEASE"
 val serializationCoreVersion = "1.6.0"
-val springDocVersion = "1.7.0"
+val springDocVersion = "2.1.0"
 val springmockkVersion = "4.0.2"
 
 //val datetimeVersion = "0.4.0"
@@ -36,6 +37,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-common")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+    implementation("io.github.microutils:kotlin-logging-jvm:$kotlinLoggingVersion")
 
     implementation("org.springframework.boot:spring-boot-starter")
     implementation("io.projectreactor.kotlin:reactor-kotlin-extensions")
@@ -45,12 +47,14 @@ dependencies {
 
     implementation("org.springframework.boot:spring-boot-starter-webflux")
     implementation("org.springframework.boot:spring-boot-starter-actuator")
+    implementation("org.springframework.boot:spring-boot-starter-validation")
     implementation("org.springframework.boot:spring-boot-starter-data-r2dbc")
     runtimeOnly("org.postgresql:r2dbc-postgresql")
     runtimeOnly("org.postgresql:postgresql")
 
-    implementation("org.springdoc:springdoc-openapi-webflux-ui:$springDocVersion")
-    implementation("org.springdoc:springdoc-openapi-kotlin:$springDocVersion")
+    implementation("org.springdoc:springdoc-openapi-starter-webflux-ui:$springDocVersion")
+    implementation("org.springdoc:springdoc-openapi-starter-common:$springDocVersion")
+
 
 //    implementation("org.springframework.cloud:spring-cloud-starter-sleuth")
 //    implementation("org.springframework.cloud:spring-cloud-stream")
@@ -74,3 +78,4 @@ dependencies {
 tasks.test {
     useJUnitPlatform()
 }
+
