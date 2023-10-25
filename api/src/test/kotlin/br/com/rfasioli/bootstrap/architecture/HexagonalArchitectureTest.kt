@@ -9,7 +9,7 @@ import com.tngtech.archunit.library.Architectures.layeredArchitecture
 class HexagonalArchitectureTest {
 
     @ArchTest
-    val `hexagonal architecture layers is respected`: ArchRule =
+    val hexagonalArchitectureLayersIsRespected: ArchRule =
         layeredArchitecture().consideringAllDependencies()
             .layer("DomainServices").definedBy("..domain.usecase..")
             .layer("PortIn").definedBy("..port.input..")
@@ -22,5 +22,4 @@ class HexagonalArchitectureTest {
             .whereLayer("PortIn").mayOnlyBeAccessedByLayers("DomainServices", "AdapterIn")
             .whereLayer("PortOut").mayOnlyBeAccessedByLayers("DomainServices", "AdapterOut")
             .allowEmptyShould(true)
-
 }

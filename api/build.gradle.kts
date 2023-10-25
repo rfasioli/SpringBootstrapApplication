@@ -28,8 +28,8 @@ val serializationCoreVersion = "1.6.0"
 val springDocVersion = "2.2.0"
 val springmockkVersion = "4.0.2"
 
-//val datetimeVersion = "0.4.0"
-//val uuidVersion = "0.0.15"
+// val datetimeVersion = "0.4.0"
+// val uuidVersion = "0.0.15"
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
@@ -55,7 +55,6 @@ dependencies {
     implementation("org.springdoc:springdoc-openapi-starter-webflux-ui:$springDocVersion")
     implementation("org.springdoc:springdoc-openapi-starter-common:$springDocVersion")
 
-
 //    implementation("org.springframework.cloud:spring-cloud-starter-sleuth")
 //    implementation("org.springframework.cloud:spring-cloud-stream")
 //    implementation("org.springframework.cloud:spring-cloud-stream-binder-rabbit")
@@ -78,4 +77,3 @@ dependencies {
 tasks.test {
     useJUnitPlatform()
 }
-
