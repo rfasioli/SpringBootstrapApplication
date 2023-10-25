@@ -1,11 +1,15 @@
 package br.com.rfasioli.bootstrap.architecture
 
+import com.tngtech.archunit.core.importer.ImportOption
 import com.tngtech.archunit.junit.AnalyzeClasses
 import com.tngtech.archunit.junit.ArchTest
 import com.tngtech.archunit.lang.ArchRule
 import com.tngtech.archunit.library.Architectures.layeredArchitecture
 
-@AnalyzeClasses(packages = [ "br.com.rfasioli.bootstrap.api" ])
+@AnalyzeClasses(
+    packages = ["br.com.rfasioli.bootstrap.api"],
+    importOptions = [ImportOption.DoNotIncludeTests::class]
+)
 class HexagonalArchitectureTest {
 
     @ArchTest

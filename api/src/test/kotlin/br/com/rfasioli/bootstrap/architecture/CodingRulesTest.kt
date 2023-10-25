@@ -4,6 +4,7 @@ import br.com.rfasioli.bootstrap.api.IntegrationTest
 import com.tngtech.archunit.base.DescribedPredicate.not
 import com.tngtech.archunit.core.domain.JavaClass.Predicates.equivalentTo
 import com.tngtech.archunit.core.domain.JavaClasses
+import com.tngtech.archunit.core.importer.ImportOption
 import com.tngtech.archunit.junit.AnalyzeClasses
 import com.tngtech.archunit.junit.ArchTest
 import com.tngtech.archunit.lang.ArchRule
@@ -18,7 +19,10 @@ import com.tngtech.archunit.library.GeneralCodingRules.NO_CLASSES_SHOULD_USE_JAV
 import com.tngtech.archunit.library.GeneralCodingRules.NO_CLASSES_SHOULD_USE_JODATIME
 import com.tngtech.archunit.library.dependencies.SlicesRuleDefinition
 
-@AnalyzeClasses(packages = [ "br.com.rfasioli.bootstrap.api" ])
+@AnalyzeClasses(
+    packages = ["br.com.rfasioli.bootstrap.api"],
+    importOptions = [ImportOption.DoNotIncludeTests::class]
+)
 class CodingRulesTest {
 
     @ArchTest
