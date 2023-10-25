@@ -16,13 +16,10 @@ import reactor.core.publisher.Mono
 import reactor.test.StepVerifier
 import java.time.LocalDate
 
-internal class EnrollInElegibleCourseUseCaseTest : UnitTest() {
-
-    @MockK
-    private lateinit var courseFetcher: CourseFetcher
-
-    @MockK
-    private lateinit var enrollmentAnalyser: EnrollmentAnalyzer
+internal class EnrollInElegibleCourseUseCaseTest(
+    @MockK private val courseFetcher: CourseFetcher,
+    @MockK private val enrollmentAnalyser: EnrollmentAnalyzer
+) : UnitTest() {
 
     @InjectMockKs
     private lateinit var enrollInElegibleCourseUseCase: EnrollInElegibleCourseUseCase

@@ -9,7 +9,7 @@ buildscript {
 }
 
 plugins {
-    val kotlinVersion = "1.9.10"
+    val kotlinVersion = "1.9.0"
 
     kotlin("jvm") version kotlinVersion
     kotlin("plugin.spring") version kotlinVersion
@@ -66,6 +66,8 @@ subprojects {
 
     apply {
         plugin("io.spring.dependency-management")
+        plugin("io.gitlab.arturbosch.detekt")
+        plugin("org.jlleitschuh.gradle.ktlint")
     }
 }
 

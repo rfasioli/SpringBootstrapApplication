@@ -1,9 +1,9 @@
 package br.com.rfasioli.bootstrap.api.domain.usecase
 
-import br.com.rfasioli.bootstrap.api.domain.port.input.CoursesByStageFinder
-import br.com.rfasioli.bootstrap.api.domain.port.output.CoursesFinder
 import br.com.rfasioli.bootstrap.api.domain.model.Course
 import br.com.rfasioli.bootstrap.api.domain.model.Stage
+import br.com.rfasioli.bootstrap.api.domain.port.input.CoursesByStageFinder
+import br.com.rfasioli.bootstrap.api.domain.port.output.CoursesFinder
 import org.springframework.stereotype.Service
 import reactor.core.publisher.Flux
 import reactor.core.publisher.SignalType

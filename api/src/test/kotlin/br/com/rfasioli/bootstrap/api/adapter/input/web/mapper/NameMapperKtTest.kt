@@ -42,4 +42,3 @@ class NameMapperKtTest : UnitTest() {
         assertTrue(result.lastName.isNullOrBlank())
     }
 }
-

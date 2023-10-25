@@ -9,16 +9,14 @@ import br.com.rfasioli.bootstrap.mock.core.domain.generateCourse
 import io.mockk.every
 import io.mockk.impl.annotations.InjectMockKs
 import io.mockk.impl.annotations.MockK
-import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
 import reactor.core.publisher.Flux
 import reactor.test.StepVerifier
 import kotlin.random.Random
 
-internal class FetchCoursesForSelectedStagesUseCaseTest : UnitTest() {
-
-    @MockK
-    private lateinit var coursesFinder: CoursesFinder
+internal class FetchCoursesForSelectedStagesUseCaseTest(
+    @MockK private val coursesFinder: CoursesFinder
+) : UnitTest() {
 
     @InjectMockKs
     private lateinit var fetchCoursesForSelectedStagesUseCase: FetchCoursesForSelectedStagesUseCase

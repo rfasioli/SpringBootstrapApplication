@@ -2,7 +2,6 @@ package br.com.rfasioli.bootstrap.api.adapter.input.web.mapper
 
 import br.com.rfasioli.bootstrap.api.domain.model.Name
 
-
 fun Name.Companion.splitFromString(source: String): Name =
     source.split(" ")
         .let { toTriple(it) }
