@@ -1,5 +1,6 @@
 plugins {
     id("org.springframework.boot")
+    id("jacoco")
 
     kotlin("jvm")
     kotlin("plugin.spring")
@@ -76,4 +77,68 @@ dependencies {
 
 tasks.test {
     useJUnitPlatform()
+}
+
+/************************
+ * JaCoCo Configuration *
+ ************************/
+jacoco {
+    toolVersion = "0.8.9"
+}
+
+val exclusions = listOf(
+    "**/config/**",
+    "**/application/exception/**",
+    "**/application/SdaBootstrapApplication.kt",
+    "**/domain/port/**",
+    "**/adapter/input/web/resources/**",
+    "**/adapter/input/web/advice/**",
+    "**/adapter/input/web/springdoc/**",
+    "**/adapter/output/web/persistence/entity/**",
+    "**/adapter/output/web/persistence/repository/**"
+)
+
+tasks.test {
+    finalizedBy(tasks.jacocoTestReport)
+    configure<JacocoTaskExtension> {
+        excludes = exclusions
+    }
+}
+tasks.jacocoTestReport {
+    dependsOn(tasks.test)
+    finalizedBy(tasks.jacocoTestCoverageVerification)
+    reports {
+        xml.required.set(true)
+        csv.required.set(false)
+        html.required.set(true)
+    }
+}
+
+tasks.jacocoTestCoverageVerification {
+    dependsOn(tasks.jacocoTestReport)
+    violationRules {
+        rule {
+            element = "BUNDLE"
+            limit {
+                counter = "INSTRUCTION"
+                value = "COVEREDRATIO"
+                minimum = "0.6".toBigDecimal()
+            }
+        }
+
+        rule {
+            element = "CLASS"
+            includes = listOf("org.gradle.*")
+            limit {
+                counter = "LINE"
+                value = "TOTALCOUNT"
+                maximum = "0.8".toBigDecimal()
+            }
+        }
+    }
+    classDirectories.setFrom(
+        sourceSets.main.get().output.asFileTree.matching {
+            exclude(exclusions)
+        }
+    )
 }
