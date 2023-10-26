@@ -9,7 +9,7 @@ spring:
     show-sql: true
     properties:
       javax.persistence.schema-generation.create-source: metadata-then-script
-      javax.persistence.schema-generation.create-script-source: ../../src/test/resources/db/national_withdrawal_hist.sql
+      javax.persistence.schema-generation.create-script-source: ../../src/main/resources/db/national_withdrawal_hist.sql
       org.hibernate.envers.revision_field_name: idt_revision_info
       org.hibernate.envers.revision_type_field_name: idt_type_revision
   h2:

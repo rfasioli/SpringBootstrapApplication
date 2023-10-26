@@ -27,6 +27,8 @@ plugins {
     id("com.palantir.docker") version "0.35.0" apply false
 }
 
+val springCloudVersion = "2022.0.4"
+
 tasks.bootJar {
     enabled = false
 }
@@ -68,6 +70,12 @@ subprojects {
         plugin("io.spring.dependency-management")
         plugin("io.gitlab.arturbosch.detekt")
         plugin("org.jlleitschuh.gradle.ktlint")
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom("org.springframework.cloud:spring-cloud-dependencies:$springCloudVersion")
+        }
     }
 }
 
