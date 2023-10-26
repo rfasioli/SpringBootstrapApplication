@@ -62,7 +62,7 @@ dependencies {
 
     implementation("org.springframework.boot:spring-boot-properties-migrator:3.1.5")
 
-    testImplementation("org.junit.jupiter:junit-jupiter:5.9.2")
+    testImplementation("org.junit.jupiter:junit-jupiter:5.10.0")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
