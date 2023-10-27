@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test
 import org.springframework.context.ApplicationContext
 
 class SpringBootstrapApplicationIT(
-    private val applicationContext: ApplicationContext
+    private val applicationContext: ApplicationContext,
 ) : IntegrationTest() {
 
     @Test

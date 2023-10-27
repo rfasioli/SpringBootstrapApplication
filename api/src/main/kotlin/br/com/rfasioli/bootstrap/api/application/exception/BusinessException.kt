@@ -9,6 +9,6 @@ abstract class BusinessException : RuntimeException {
         message,
         cause,
         enableSuppression,
-        writableStackTrace
+        writableStackTrace,
     )
 }

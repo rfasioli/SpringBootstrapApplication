@@ -17,5 +17,5 @@ data class CourseEntity(
 
     val stage: Stage,
 
-    val tuitionFee: BigDecimal
+    val tuitionFee: BigDecimal,
 )

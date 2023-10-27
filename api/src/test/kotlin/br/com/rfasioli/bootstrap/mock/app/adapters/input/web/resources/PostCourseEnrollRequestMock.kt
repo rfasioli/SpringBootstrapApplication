@@ -15,5 +15,5 @@ fun PostCourseEnrollRequest.Companion.buildMock(): PostCourseEnrollRequest =
         gender = fixtureGender().name,
         birthDate = fixtureBirthDate(2),
         document = fixtureCpf(),
-        course = fixtureUuid()
+        course = fixtureUuid(),
     )
