@@ -22,6 +22,7 @@ val archunitVersion = "1.1.0"
 val coroutinesVersion = "1.7.3"
 val fixtureVersion = "1.2.0"
 val h2Version = "2.2.224"
+val junitVersion = "5.9.2"
 val kotlinFakerVersion = "1.15.0"
 val kotlinLoggingVersion = "3.0.5"
 val r2dbcH2Version = "1.0.0.RELEASE"
@@ -62,9 +63,6 @@ dependencies {
 
     implementation("org.springframework.boot:spring-boot-properties-migrator:3.1.5")
 
-    testImplementation("org.junit.jupiter:junit-jupiter:5.9.2")
-    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
-
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("com.tngtech.archunit:archunit-junit5:$archunitVersion")
     testImplementation("org.springframework.cloud:spring-cloud-starter-contract-stub-runner")
@@ -76,6 +74,8 @@ dependencies {
     testImplementation("com.appmattus.fixture:fixture-generex:$fixtureVersion")
     testImplementation("com.h2database:h2:$h2Version")
     testImplementation("io.r2dbc:r2dbc-h2:$r2dbcH2Version")
+    testImplementation("org.junit.jupiter:junit-jupiter:$junitVersion")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
 tasks.test {

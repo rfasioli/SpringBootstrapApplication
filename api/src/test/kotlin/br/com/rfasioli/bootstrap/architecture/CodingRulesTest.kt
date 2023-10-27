@@ -29,7 +29,7 @@ class CodingRulesTest {
     private val noAccessToStandardStreams = NO_CLASSES_SHOULD_ACCESS_STANDARD_STREAMS
 
     @ArchTest
-    public fun noAccessToStandardStreamsAsMethod(classes: JavaClasses) {
+    private fun noAccessToStandardStreamsAsMethod(classes: JavaClasses) {
         noClasses().should(ACCESS_STANDARD_STREAMS).check(classes)
     }
 
