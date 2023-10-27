@@ -21,7 +21,7 @@ import com.tngtech.archunit.library.dependencies.SlicesRuleDefinition
 
 @AnalyzeClasses(
     packages = ["br.com.rfasioli.bootstrap.api"],
-    importOptions = [ImportOption.DoNotIncludeTests::class]
+    importOptions = [ImportOption.DoNotIncludeTests::class],
 )
 class CodingRulesTest {
 

@@ -9,5 +9,5 @@ fun Name.Companion.buildMock(): Name =
     Name(
         faker.name.firstName(),
         faker.name.nameWithMiddle(),
-        faker.name.lastName()
+        faker.name.lastName(),
     )

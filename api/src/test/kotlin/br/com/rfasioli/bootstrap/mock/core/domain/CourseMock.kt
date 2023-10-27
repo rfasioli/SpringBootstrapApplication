@@ -15,12 +15,12 @@ fun Course.Companion.buildMock(): Course =
         name = faker.rickAndMorty.locations(),
         description = faker.rickAndMorty.quotes(),
         stage = fixtureStage(),
-        tuitionFee = BigDecimal(fixtureMoney())
+        tuitionFee = BigDecimal(fixtureMoney()),
     )
 
 fun Course.Companion.generateCourse(): Flux<Course> =
     Flux.generate { synchronousSink: SynchronousSink<Course> ->
         synchronousSink.next(
-            buildMock()
+            buildMock(),
         )
     }

@@ -8,5 +8,5 @@ data class GetCourseResourceResponse(
     val name: String,
     val description: String,
     val stage: Stage,
-    val tuitionFee: BigDecimal
+    val tuitionFee: BigDecimal,
 )

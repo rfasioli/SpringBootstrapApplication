@@ -12,7 +12,7 @@ internal class GenderMapperKtTest : UnitTest() {
     @CsvSource(*["MALE,MALE", "FEMALE,FEMALE", "FEME,OTHER", ",UNINFORMED"])
     fun `Should convert from string to valid Gender`(
         source: String?,
-        expected: Gender
+        expected: Gender,
     ) {
         val result = genderFromString(source)
         assertEquals(expected, result)

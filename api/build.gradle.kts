@@ -101,7 +101,7 @@ val exclusions = listOf(
     "**/adapter/input/web/advice/**",
     "**/adapter/input/web/springdoc/**",
     "**/adapter/output/web/persistence/entity/**",
-    "**/adapter/output/web/persistence/repository/**"
+    "**/adapter/output/web/persistence/repository/**",
 )
 
 tasks.test {
@@ -145,6 +145,6 @@ tasks.jacocoTestCoverageVerification {
     classDirectories.setFrom(
         sourceSets.main.get().output.asFileTree.matching {
             exclude(exclusions)
-        }
+        },
     )
 }

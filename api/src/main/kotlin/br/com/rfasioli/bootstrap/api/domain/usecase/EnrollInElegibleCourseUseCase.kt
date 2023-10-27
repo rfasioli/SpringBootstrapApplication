@@ -25,7 +25,7 @@ class EnrollInElegibleCourseUseCase(
                     EnrollmentAggregation(UUID.randomUUID(), requirement, entity)
                         .also { checkEligibility(it) }
                         .also { enrollmentAnalyser.sendRequirementForAnalysis(it) }
-                        .id
+                        .id,
                 )
                     .log()
             }

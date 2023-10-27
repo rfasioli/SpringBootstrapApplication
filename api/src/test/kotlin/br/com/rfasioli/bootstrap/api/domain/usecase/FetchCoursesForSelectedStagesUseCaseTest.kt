@@ -15,7 +15,7 @@ import reactor.test.StepVerifier
 import kotlin.random.Random
 
 internal class FetchCoursesForSelectedStagesUseCaseTest(
-    @MockK private val coursesFinder: CoursesFinder
+    @MockK private val coursesFinder: CoursesFinder,
 ) : UnitTest() {
 
     @InjectMockKs

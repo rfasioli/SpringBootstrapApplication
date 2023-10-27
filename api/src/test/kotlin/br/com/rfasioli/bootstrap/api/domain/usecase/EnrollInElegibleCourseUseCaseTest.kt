@@ -18,7 +18,7 @@ import java.time.LocalDate
 
 internal class EnrollInElegibleCourseUseCaseTest(
     @MockK private val courseFetcher: CourseFetcher,
-    @MockK private val enrollmentAnalyser: EnrollmentAnalyzer
+    @MockK private val enrollmentAnalyser: EnrollmentAnalyzer,
 ) : UnitTest() {
 
     @InjectMockKs
@@ -30,7 +30,7 @@ internal class EnrollInElegibleCourseUseCaseTest(
         val requirement = Requirement.buildMock()
             .copy(
                 course = course.id!!,
-                birthDate = LocalDate.now().minusYears(course.stage.age.first.toLong())
+                birthDate = LocalDate.now().minusYears(course.stage.age.first.toLong()),
             )
 
         every { courseFetcher.fetchCourseById(course.id!!) }
@@ -51,7 +51,7 @@ internal class EnrollInElegibleCourseUseCaseTest(
         val requirement = Requirement.buildMock()
             .copy(
                 course = course.id!!,
-                birthDate = LocalDate.now()
+                birthDate = LocalDate.now(),
             )
 
         every { courseFetcher.fetchCourseById(course.id!!) }
