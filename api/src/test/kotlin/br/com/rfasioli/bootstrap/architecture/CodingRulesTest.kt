@@ -43,7 +43,7 @@ class CodingRulesTest {
     private val noJodatime = NO_CLASSES_SHOULD_USE_JODATIME
 
     @ArchTest
-    public fun noFieldInjection(classes: JavaClasses) {
+    fun noFieldInjection(classes: JavaClasses) {
         NO_CLASSES_SHOULD_USE_FIELD_INJECTION
             .allowEmptyShould(true)
             .check(classes.that(are(not(equivalentTo(IntegrationTest::class.java)))))

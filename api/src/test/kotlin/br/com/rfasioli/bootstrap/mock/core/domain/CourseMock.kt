@@ -1,6 +1,8 @@
 package br.com.rfasioli.bootstrap.mock.core.domain
 
 import br.com.rfasioli.bootstrap.api.domain.model.Course
+import br.com.rfasioli.bootstrap.mock.fixtureMoney
+import br.com.rfasioli.bootstrap.mock.fixtureStage
 import io.github.serpro69.kfaker.faker
 import reactor.core.publisher.Flux
 import reactor.core.publisher.SynchronousSink
