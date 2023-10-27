@@ -22,6 +22,7 @@ val archunitVersion = "1.1.0"
 val coroutinesVersion = "1.7.3"
 val fixtureVersion = "1.2.0"
 val h2Version = "2.2.224"
+val junitVersion = "5.9.2"
 val kotlinFakerVersion = "1.15.0"
 val kotlinLoggingVersion = "3.0.5"
 val r2dbcH2Version = "1.0.0.RELEASE"
@@ -76,6 +77,8 @@ dependencies {
     testImplementation("com.appmattus.fixture:fixture-generex:$fixtureVersion")
     testImplementation("com.h2database:h2:$h2Version")
     testImplementation("io.r2dbc:r2dbc-h2:$r2dbcH2Version")
+    testImplementation("org.junit.jupiter:junit-jupiter:$junitVersion")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
 tasks.test {
@@ -98,7 +101,7 @@ val exclusions = listOf(
     "**/adapter/input/web/advice/**",
     "**/adapter/input/web/springdoc/**",
     "**/adapter/output/web/persistence/entity/**",
-    "**/adapter/output/web/persistence/repository/**"
+    "**/adapter/output/web/persistence/repository/**",
 )
 
 tasks.test {
@@ -142,6 +145,6 @@ tasks.jacocoTestCoverageVerification {
     classDirectories.setFrom(
         sourceSets.main.get().output.asFileTree.matching {
             exclude(exclusions)
-        }
+        },
     )
 }

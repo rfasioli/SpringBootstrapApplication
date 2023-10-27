@@ -8,7 +8,7 @@ import com.tngtech.archunit.library.Architectures.layeredArchitecture
 
 @AnalyzeClasses(
     packages = ["br.com.rfasioli.bootstrap.api"],
-    importOptions = [ImportOption.DoNotIncludeTests::class]
+    importOptions = [ImportOption.DoNotIncludeTests::class],
 )
 class HexagonalArchitectureTest {
 

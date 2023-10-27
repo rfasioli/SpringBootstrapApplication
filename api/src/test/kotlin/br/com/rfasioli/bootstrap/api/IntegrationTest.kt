@@ -13,9 +13,9 @@ import org.springframework.test.web.reactive.server.WebTestClient
 
 @SpringBootTest(
     webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
-    classes = [ SpringBootstrapApplication::class ]
+    classes = [ SpringBootstrapApplication::class ],
 )
-@AutoConfigureWebTestClient()
+@AutoConfigureWebTestClient
 @ExtendWith(SpringExtension::class)
 @AutoConfigureWireMock(stubs = ["classpath:/stubs"], port = 0)
 @Tag("Integration")

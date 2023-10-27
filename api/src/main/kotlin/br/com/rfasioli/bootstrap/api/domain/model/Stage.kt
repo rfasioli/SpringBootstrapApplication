@@ -8,5 +8,5 @@ enum class Stage(val age: IntRange) {
     FUNDAMENTAL_I(6..11),
     FUNDAMENTAL_II(10..15),
     MEDIO(14..18),
-    SUPERIOR(16..999)
+    SUPERIOR(16..999),
 }

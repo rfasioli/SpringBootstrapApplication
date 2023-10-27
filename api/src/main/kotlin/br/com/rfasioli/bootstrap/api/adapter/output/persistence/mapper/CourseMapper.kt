@@ -9,5 +9,5 @@ fun CourseEntity.toCourse(): Course =
         name = this.name,
         description = this.description,
         stage = this.stage,
-        tuitionFee = this.tuitionFee
+        tuitionFee = this.tuitionFee,
     )

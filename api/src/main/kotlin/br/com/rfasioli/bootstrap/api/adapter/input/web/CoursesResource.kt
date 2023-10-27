@@ -23,12 +23,12 @@ import reactor.core.publisher.Mono
 @RequestMapping("/courses")
 class CoursesResource(
     private val courseEnroller: CourseEnroller,
-    private val coursesByStageFinder: CoursesByStageFinder
+    private val coursesByStageFinder: CoursesByStageFinder,
 ) : CoursesResourceSpringdoc {
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     override fun getCoursesByStages(
-        @RequestParam stages: List<Stage>
+        @RequestParam stages: List<Stage>,
     ): Flux<GetCourseResourceResponse> =
         coursesByStageFinder.fetchCoursesByStage(stages)
             .map { it.toCourseResourceResponse() }

@@ -8,7 +8,7 @@ data class Requirement(
     val gender: Gender,
     val birthDate: LocalDate,
     val document: String,
-    val course: UUID
+    val course: UUID,
 ) {
     companion object
 }

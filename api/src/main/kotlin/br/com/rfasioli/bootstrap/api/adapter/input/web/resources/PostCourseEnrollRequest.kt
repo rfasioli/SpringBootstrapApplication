@@ -7,7 +7,7 @@ data class PostCourseEnrollRequest(
     val gender: String,
     val birthDate: LocalDate,
     val document: String,
-    val course: String
+    val course: String,
 ) {
     companion object
 }

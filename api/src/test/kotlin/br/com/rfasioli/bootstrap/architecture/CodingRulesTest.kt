@@ -21,7 +21,7 @@ import com.tngtech.archunit.library.dependencies.SlicesRuleDefinition
 
 @AnalyzeClasses(
     packages = ["br.com.rfasioli.bootstrap.api"],
-    importOptions = [ImportOption.DoNotIncludeTests::class]
+    importOptions = [ImportOption.DoNotIncludeTests::class],
 )
 class CodingRulesTest {
 
@@ -29,7 +29,7 @@ class CodingRulesTest {
     private val noAccessToStandardStreams = NO_CLASSES_SHOULD_ACCESS_STANDARD_STREAMS
 
     @ArchTest
-    public fun noAccessToStandardStreamsAsMethod(classes: JavaClasses) {
+    private fun noAccessToStandardStreamsAsMethod(classes: JavaClasses) {
         noClasses().should(ACCESS_STANDARD_STREAMS).check(classes)
     }
 
@@ -43,7 +43,7 @@ class CodingRulesTest {
     private val noJodatime = NO_CLASSES_SHOULD_USE_JODATIME
 
     @ArchTest
-    public fun noFieldInjection(classes: JavaClasses) {
+    fun noFieldInjection(classes: JavaClasses) {
         NO_CLASSES_SHOULD_USE_FIELD_INJECTION
             .allowEmptyShould(true)
             .check(classes.that(are(not(equivalentTo(IntegrationTest::class.java)))))

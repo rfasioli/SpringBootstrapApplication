@@ -13,7 +13,7 @@ import java.util.UUID
 
 @Component
 class CoursePersistenceAdapter(
-    private val courseRepository: CourseRepository
+    private val courseRepository: CourseRepository,
 ) : CoursesFinder, CourseFetcher {
     override fun findCoursesByStage(stages: List<Stage>): Flux<Course> =
         courseRepository.findByStageIn(stages)

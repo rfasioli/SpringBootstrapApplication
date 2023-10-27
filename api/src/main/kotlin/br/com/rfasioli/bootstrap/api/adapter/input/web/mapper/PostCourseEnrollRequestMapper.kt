@@ -11,5 +11,5 @@ fun PostCourseEnrollRequest.toRequirement() =
         gender = genderFromString(this.gender),
         birthDate = this.birthDate,
         document = this.document,
-        course = UUID.fromString(this.course)
+        course = UUID.fromString(this.course),
     )

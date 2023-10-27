@@ -15,7 +15,7 @@ import java.util.UUID
 @Service
 class EnrollInElegibleCourseUseCase(
     private val courseFetcher: CourseFetcher,
-    private val enrollmentAnalyser: EnrollmentAnalyzer
+    private val enrollmentAnalyser: EnrollmentAnalyzer,
 ) : CourseEnroller {
     override fun enroll(requirement: Requirement): Mono<UUID> =
         courseFetcher.fetchCourseById(requirement.course)
@@ -25,7 +25,7 @@ class EnrollInElegibleCourseUseCase(
                     EnrollmentAggregation(UUID.randomUUID(), requirement, entity)
                         .also { checkEligibility(it) }
                         .also { enrollmentAnalyser.sendRequirementForAnalysis(it) }
-                        .id
+                        .id,
                 )
                     .log()
             }

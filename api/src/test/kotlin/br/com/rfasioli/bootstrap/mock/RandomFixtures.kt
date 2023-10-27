@@ -13,7 +13,7 @@ private val uuidRegex = "[a-f0-9]{8}-[a-f0-9]{4}-4[a-f0-9]{3}-[89aAbB][a-f0-9]{3
 
 private val moneyRegex = "[0-10-3][0-9]{3}\\.[0-9]{2}".toRegex()
 
-private val cpfRegex = "[0-9]{3}\\.[0-9]{3}\\.[0-9]{3}\\-[0-9]{2}".toRegex()
+private val cpfRegex = "[0-9]{3}\\.[0-9]{3}\\.[0-9]{3}-[0-9]{2}".toRegex()
 
 fun fixtureUuid(): String =
     fixture<String> {
