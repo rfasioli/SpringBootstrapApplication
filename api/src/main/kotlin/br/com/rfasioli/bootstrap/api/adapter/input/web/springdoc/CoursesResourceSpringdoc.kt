@@ -10,5 +10,4 @@ import reactor.core.publisher.Flux
 fun interface CoursesResourceSpringdoc {
     @Operation(summary = "Get Courses by Stages")
     fun getCoursesByStages(stages: List<Stage>): Flux<GetCourseResourceResponse>
-
 }

@@ -13,11 +13,11 @@ import org.springframework.web.bind.annotation.RestController
 import reactor.core.publisher.Mono
 
 @RestController
-@RequestMapping("/courses")
+@RequestMapping("/enroll")
 class EnrollmentResource(
     private val courseEnroller: CourseEnroller,
 ) : EnrollmentResourceSpringdoc {
-    @PostMapping("/enroll")
+    @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     override fun enroll(request: PostCourseEnrollRequest): Mono<PostCourseEnrollResponse> =
         courseEnroller.enroll(request.toRequirement())

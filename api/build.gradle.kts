@@ -108,8 +108,10 @@ tasks.test {
     finalizedBy(tasks.jacocoTestReport)
     configure<JacocoTaskExtension> {
         excludes = exclusions
+        isEnabled = true
     }
 }
+
 tasks.jacocoTestReport {
     dependsOn(tasks.test)
     finalizedBy(tasks.jacocoTestCoverageVerification)
