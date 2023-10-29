@@ -21,17 +21,11 @@ tasks.jar {
 val archunitVersion = "1.1.0"
 val coroutinesVersion = "1.7.3"
 val fixtureVersion = "1.2.0"
-val h2Version = "2.2.224"
-val junitVersion = "5.10.0"
 val kotlinFakerVersion = "1.15.0"
 val kotlinLoggingVersion = "3.0.5"
-val r2dbcH2Version = "1.0.0.RELEASE"
 val serializationCoreVersion = "1.6.0"
 val springDocVersion = "2.2.0"
 val springmockkVersion = "4.0.2"
-
-// val datetimeVersion = "0.4.0"
-// val uuidVersion = "0.0.15"
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
@@ -75,9 +69,9 @@ dependencies {
     testImplementation("io.github.serpro69:kotlin-faker:$kotlinFakerVersion")
     testImplementation("com.appmattus.fixture:fixture:$fixtureVersion")
     testImplementation("com.appmattus.fixture:fixture-generex:$fixtureVersion")
-    testImplementation("com.h2database:h2:$h2Version")
-    testImplementation("io.r2dbc:r2dbc-h2:$r2dbcH2Version")
-    testImplementation("org.junit.jupiter:junit-jupiter:$junitVersion")
+    testImplementation("com.h2database:h2")
+    testImplementation("io.r2dbc:r2dbc-h2")
+    testImplementation("org.junit.jupiter:junit-jupiter")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 
@@ -108,8 +102,10 @@ tasks.test {
     finalizedBy(tasks.jacocoTestReport)
     configure<JacocoTaskExtension> {
         excludes = exclusions
+        isEnabled = true
     }
 }
+
 tasks.jacocoTestReport {
     dependsOn(tasks.test)
     finalizedBy(tasks.jacocoTestCoverageVerification)
