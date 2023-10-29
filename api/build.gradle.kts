@@ -75,9 +75,9 @@ dependencies {
     testImplementation("io.github.serpro69:kotlin-faker:$kotlinFakerVersion")
     testImplementation("com.appmattus.fixture:fixture:$fixtureVersion")
     testImplementation("com.appmattus.fixture:fixture-generex:$fixtureVersion")
-    testImplementation("com.h2database:h2:$h2Version")
-    testImplementation("io.r2dbc:r2dbc-h2:$r2dbcH2Version")
-    testImplementation("org.junit.jupiter:junit-jupiter:$junitVersion")
+    testImplementation("com.h2database:h2")
+    testImplementation("io.r2dbc:r2dbc-h2")
+    testImplementation("org.junit.jupiter:junit-jupiter")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
 

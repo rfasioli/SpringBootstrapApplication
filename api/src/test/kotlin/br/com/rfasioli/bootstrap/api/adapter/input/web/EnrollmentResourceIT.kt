@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test
 
 class EnrollmentResourceIT : IntegrationTest() {
     companion object {
-        private const val COURSES_ENROLL_URI = "/courses/enroll"
+        private const val COURSES_ENROLL_URI = "/enroll"
     }
 
     @Nested
