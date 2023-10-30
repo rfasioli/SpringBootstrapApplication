@@ -37,7 +37,7 @@ class CoursesResource(
     @GetMapping("/id")
     @ResponseStatus(HttpStatus.OK)
     override fun getCourseById(
-        @PathVariable id: String
+        @PathVariable id: String,
     ): Mono<CourseResourceResponse> {
         TODO("Not yet implemented")
     }
@@ -55,7 +55,7 @@ class CoursesResource(
     @ResponseStatus(HttpStatus.ACCEPTED)
     override fun putCourseById(
         @PathVariable id: String,
-        @RequestBody course: CourseResourceResquest
+        @RequestBody course: CourseResourceResquest,
     ): Mono<CourseResourceResponse> =
         Mono.just(Pair(id, course))
             .map { it.second.toCourse(it.first) }
@@ -64,9 +64,8 @@ class CoursesResource(
     @DeleteMapping("/id")
     @ResponseStatus(HttpStatus.OK)
     override fun deleteCourseById(
-        @PathVariable id: String
+        @PathVariable id: String,
     ): Mono<Void> =
         Mono.just(id)
             .map { null }
-
 }

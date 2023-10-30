@@ -12,17 +12,17 @@ import reactor.core.publisher.Mono
 interface CoursesResourceSpringdoc {
     @Operation(summary = "Get Courses by Stages")
     fun getCoursesByStages(
-        stages: List<Stage>
+        stages: List<Stage>,
     ): Flux<CourseResourceResponse>
 
     @Operation(summary = "Get Course by Id")
     fun getCourseById(
-        id: String
+        id: String,
     ): Mono<CourseResourceResponse>
 
     @Operation(summary = "Add a Course")
     fun postCourse(
-        course: CourseResourceResquest
+        course: CourseResourceResquest,
     ): Mono<CourseResourceResponse>
 
     @Operation(summary = "Update a Course")
@@ -33,6 +33,6 @@ interface CoursesResourceSpringdoc {
 
     @Operation(summary = "Get Courses by Stages")
     fun deleteCourseById(
-        id: String
+        id: String,
     ): Mono<Void>
 }
