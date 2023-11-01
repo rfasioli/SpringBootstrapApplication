@@ -19,7 +19,7 @@ plugins {
     id("org.springframework.boot") version "3.2.0-SNAPSHOT"
     id("io.spring.dependency-management") version "1.1.3"
 
-    id("io.gitlab.arturbosch.detekt") version "1.23.1"
+    id("io.gitlab.arturbosch.detekt") version "1.23.3"
     id("org.jlleitschuh.gradle.ktlint") version "11.6.1"
     id("org.flywaydb.flyway") version "9.22.3"
     id("com.gorylenko.gradle-git-properties") version "2.4.1"
