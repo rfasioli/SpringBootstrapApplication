@@ -21,11 +21,13 @@ plugins {
 
     id("io.gitlab.arturbosch.detekt") version "1.23.1"
     id("org.jlleitschuh.gradle.ktlint") version "11.6.1"
-    id("org.flywaydb.flyway") version "9.22.3"
+    id("org.flywaydb.flyway") version "10.0.0"
     id("com.gorylenko.gradle-git-properties") version "2.4.1"
     id("jacoco")
     id("com.palantir.docker") version "0.35.0" apply false
 }
+
+val springCloudVersion = "2022.0.4"
 
 tasks.bootJar {
     enabled = false
@@ -68,6 +70,12 @@ subprojects {
         plugin("io.spring.dependency-management")
         plugin("io.gitlab.arturbosch.detekt")
         plugin("org.jlleitschuh.gradle.ktlint")
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom("org.springframework.cloud:spring-cloud-dependencies:$springCloudVersion")
+        }
     }
 }
 

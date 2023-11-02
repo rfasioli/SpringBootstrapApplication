@@ -39,6 +39,6 @@ class NameMapperKtTest : UnitTest() {
         val result = Name.splitFromString(source)
         assertEquals(source, result.firstName)
         assertTrue(result.middleName.isNullOrBlank())
-        assertTrue(result.lastName.isNullOrBlank())
+        assertTrue(result.lastName.isBlank())
     }
 }

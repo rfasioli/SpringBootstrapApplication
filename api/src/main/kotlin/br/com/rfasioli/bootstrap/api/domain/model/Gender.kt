@@ -4,5 +4,5 @@ enum class Gender {
     MALE,
     FEMALE,
     UNINFORMED,
-    OTHER
+    OTHER,
 }

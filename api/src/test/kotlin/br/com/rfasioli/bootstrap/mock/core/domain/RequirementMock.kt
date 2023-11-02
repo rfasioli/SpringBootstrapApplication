@@ -13,5 +13,5 @@ fun Requirement.Companion.buildMock(): Requirement =
         gender = fixtureGender(),
         birthDate = fixtureBirthDate(),
         document = fixtureCpf(),
-        course = UUID.randomUUID()
+        course = UUID.randomUUID(),
     )

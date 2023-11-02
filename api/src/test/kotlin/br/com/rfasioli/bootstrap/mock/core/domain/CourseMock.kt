@@ -1,6 +1,8 @@
 package br.com.rfasioli.bootstrap.mock.core.domain
 
 import br.com.rfasioli.bootstrap.api.domain.model.Course
+import br.com.rfasioli.bootstrap.mock.fixtureMoney
+import br.com.rfasioli.bootstrap.mock.fixtureStage
 import io.github.serpro69.kfaker.faker
 import reactor.core.publisher.Flux
 import reactor.core.publisher.SynchronousSink
@@ -12,15 +14,15 @@ private val faker = faker { }
 fun Course.Companion.buildMock(): Course =
     Course(
         id = UUID.randomUUID(),
-        name = faker.rickAndMorty.locations(),
-        description = faker.rickAndMorty.quotes(),
+        name = faker.educator.courseName(),
+        description = faker.educator.subject(),
         stage = fixtureStage(),
-        tuitionFee = BigDecimal(fixtureMoney())
+        tuitionFee = BigDecimal(fixtureMoney()),
     )
 
 fun Course.Companion.generateCourse(): Flux<Course> =
     Flux.generate { synchronousSink: SynchronousSink<Course> ->
         synchronousSink.next(
-            buildMock()
+            buildMock(),
         )
     }
