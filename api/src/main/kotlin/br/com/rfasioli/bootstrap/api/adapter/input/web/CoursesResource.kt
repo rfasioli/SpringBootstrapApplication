@@ -34,7 +34,7 @@ class CoursesResource(
         coursesByStageFinder.fetchCoursesByStage(stages)
             .map { it.toCourseResourceResponse() }
 
-    @GetMapping("/id")
+    @GetMapping("/{id}")
     @ResponseStatus(HttpStatus.OK)
     override fun getCourseById(
         @PathVariable id: String,
@@ -51,7 +51,7 @@ class CoursesResource(
             .map { it.toCourse() }
             .map { it.toCourseResourceResponse() }
 
-    @PutMapping("/id")
+    @PutMapping("/{id}")
     @ResponseStatus(HttpStatus.ACCEPTED)
     override fun putCourseById(
         @PathVariable id: String,
@@ -61,11 +61,11 @@ class CoursesResource(
             .map { it.second.toCourse(it.first) }
             .map { it.toCourseResourceResponse() }
 
-    @DeleteMapping("/id")
-    @ResponseStatus(HttpStatus.OK)
+    @DeleteMapping("/{id}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     override fun deleteCourseById(
         @PathVariable id: String,
     ): Mono<Void> =
         Mono.just(id)
-            .map { null }
+            .then()
 }

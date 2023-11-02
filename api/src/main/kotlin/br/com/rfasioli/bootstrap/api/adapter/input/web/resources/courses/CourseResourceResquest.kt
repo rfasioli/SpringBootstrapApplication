@@ -8,4 +8,6 @@ data class CourseResourceResquest(
     val description: String,
     val stage: Stage,
     val tuitionFee: BigDecimal,
-)
+) {
+    companion object
+}
