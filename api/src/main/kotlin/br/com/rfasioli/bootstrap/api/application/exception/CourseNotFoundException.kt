@@ -1,6 +1,6 @@
 package br.com.rfasioli.bootstrap.api.application.exception
 
-class CourseNotFoundException : BusinessException {
+class CourseNotFoundException : NotFoundException {
     companion object {
         private const val MESSAGE = "Course %s not found."
     }

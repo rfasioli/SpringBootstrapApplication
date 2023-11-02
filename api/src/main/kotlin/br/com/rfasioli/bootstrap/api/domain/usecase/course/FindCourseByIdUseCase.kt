@@ -1,5 +1,6 @@
 package br.com.rfasioli.bootstrap.api.domain.usecase.course
 
+import br.com.rfasioli.bootstrap.api.application.exception.CourseNotFoundException
 import br.com.rfasioli.bootstrap.api.domain.model.Course
 import br.com.rfasioli.bootstrap.api.domain.port.input.course.CoursesByIdFinder
 import br.com.rfasioli.bootstrap.api.domain.port.output.course.CourseFetcher
@@ -14,4 +15,5 @@ class FindCourseByIdUseCase(
 
     override fun fetchCourseById(id: UUID): Mono<Course> =
         courseFetcher.fetchCourseById(id)
+            .switchIfEmpty(Mono.error(CourseNotFoundException(id.toString())))
 }

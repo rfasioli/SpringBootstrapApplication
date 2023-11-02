@@ -18,6 +18,14 @@ import java.util.UUID
 class CoursePersistenceAdapter(
     private val courseRepository: CourseRepository,
 ) : CoursesForStagesFinder, CourseFetcher, CourseSaver, CourseRemover {
+
+    companion object {
+        private const val LOGGER_CATEGORY_FIND_COURSE_BY_STAGE = "CoursePersistenceAdapter.findCoursesByStage"
+        private const val LOGGER_CATEGORY_FETCH_COURSEBY_ID = "CoursePersistenceAdapter.fetchCourseById"
+        private const val LOGGER_CATEGORY_SAVE_COURSE = "CoursePersistenceAdapter.saveCourse"
+        private const val LOGGER_CATEGORY_REMOVE_COURSE = "CoursePersistenceAdapter.removeCourse"
+    }
+
     override fun findCoursesByStage(stages: List<Stage>): Flux<Course> =
         courseRepository.findByStageIn(stages)
             .map { it.toCourse() }
