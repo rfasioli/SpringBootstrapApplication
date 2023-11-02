@@ -1,9 +1,9 @@
-package br.com.rfasioli.bootstrap.api.domain.usecase
+package br.com.rfasioli.bootstrap.api.domain.usecase.course
 
 import br.com.rfasioli.bootstrap.api.UnitTest
 import br.com.rfasioli.bootstrap.api.domain.model.Course
 import br.com.rfasioli.bootstrap.api.domain.model.Stage
-import br.com.rfasioli.bootstrap.api.domain.port.output.CoursesFinder
+import br.com.rfasioli.bootstrap.api.domain.port.output.course.CoursesForStagesFinder
 import br.com.rfasioli.bootstrap.mock.core.domain.buildMock
 import br.com.rfasioli.bootstrap.mock.core.domain.generateCourse
 import io.mockk.every
@@ -16,7 +16,7 @@ import reactor.test.StepVerifier
 import kotlin.random.Random
 
 internal class FetchCoursesForSelectedStagesUseCaseTest(
-    @MockK private val coursesFinder: CoursesFinder,
+    @MockK private val coursesForStagesFinder: CoursesForStagesFinder,
 ) : UnitTest() {
 
     @InjectMockKs
@@ -30,7 +30,7 @@ internal class FetchCoursesForSelectedStagesUseCaseTest(
         val stages = listOf(stage)
         val expected = Course.buildMock()
 
-        every { coursesFinder.findCoursesByStage(stages) }
+        every { coursesForStagesFinder.findCoursesByStage(stages) }
             .returns(Flux.just(expected))
 
         StepVerifier.create(fetchCoursesForSelectedStagesUseCase.fetchCoursesByStage(stages))
@@ -46,7 +46,7 @@ internal class FetchCoursesForSelectedStagesUseCaseTest(
         val stages = listOf(stage)
         val expectedQuantity = Random.nextLong(until = 100)
 
-        every { coursesFinder.findCoursesByStage(stages) }
+        every { coursesForStagesFinder.findCoursesByStage(stages) }
             .returns(Course.generateCourse().take(expectedQuantity))
 
         StepVerifier.create(fetchCoursesForSelectedStagesUseCase.fetchCoursesByStage(stages))

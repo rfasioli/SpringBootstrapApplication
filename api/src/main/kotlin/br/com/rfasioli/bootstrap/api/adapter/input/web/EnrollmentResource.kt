@@ -4,7 +4,7 @@ import br.com.rfasioli.bootstrap.api.adapter.input.web.mapper.toRequirement
 import br.com.rfasioli.bootstrap.api.adapter.input.web.resources.enroll.PostCourseEnrollRequest
 import br.com.rfasioli.bootstrap.api.adapter.input.web.resources.enroll.PostCourseEnrollResponse
 import br.com.rfasioli.bootstrap.api.adapter.input.web.springdoc.EnrollmentResourceSpringdoc
-import br.com.rfasioli.bootstrap.api.domain.port.input.CourseEnroller
+import br.com.rfasioli.bootstrap.api.domain.port.input.enroll.CourseEnroller
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestMapping

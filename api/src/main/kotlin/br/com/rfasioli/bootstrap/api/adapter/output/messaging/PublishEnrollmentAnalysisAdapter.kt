@@ -1,7 +1,7 @@
 package br.com.rfasioli.bootstrap.api.adapter.output.messaging
 
 import br.com.rfasioli.bootstrap.api.domain.model.EnrollmentAggregation
-import br.com.rfasioli.bootstrap.api.domain.port.output.EnrollmentAnalyzer
+import br.com.rfasioli.bootstrap.api.domain.port.output.enroll.EnrollmentAnalyzer
 import org.springframework.stereotype.Component
 import reactor.core.publisher.Mono
 

@@ -7,6 +7,7 @@ import io.swagger.v3.oas.annotations.Operation
 import io.swagger.v3.oas.annotations.tags.Tag
 import reactor.core.publisher.Flux
 import reactor.core.publisher.Mono
+import java.util.UUID
 
 @Tag(name = "Course", description = "this API provide methods for operations with Courses")
 interface CoursesResourceSpringdoc {
@@ -17,7 +18,7 @@ interface CoursesResourceSpringdoc {
 
     @Operation(summary = "Get Course by Id")
     fun getCourseById(
-        id: String,
+        id: UUID,
     ): Mono<CourseResourceResponse>
 
     @Operation(summary = "Add a Course")
@@ -27,12 +28,12 @@ interface CoursesResourceSpringdoc {
 
     @Operation(summary = "Update a Course")
     fun putCourseById(
-        id: String,
+        id: UUID,
         course: CourseResourceResquest,
     ): Mono<CourseResourceResponse>
 
     @Operation(summary = "Get Courses by Stages")
     fun deleteCourseById(
-        id: String,
-    ): Mono<Void>
+        id: UUID,
+    ): Mono<Unit>
 }
