@@ -14,10 +14,6 @@ class UpdateExistingCourseUseCase(
     private val courseFetcher: CourseFetcher,
     private val courseSaver: CourseSaver,
 ) : CourseUpdater {
-    companion object {
-        private const val LOGGER_CATEGORY_UPDATE_COURSE = "UpdateExistingCourseUseCase.updateCourse"
-    }
-
     override fun updateCourse(course: Course): Mono<Course> =
         Mono.just(course.id ?: throw RequiredDataNotProvidedException("Course.id"))
             .flatMap {

@@ -6,7 +6,6 @@ import br.com.rfasioli.bootstrap.api.domain.port.output.course.CourseFetcher
 import br.com.rfasioli.bootstrap.api.domain.port.output.course.CourseRemover
 import org.springframework.stereotype.Service
 import reactor.core.publisher.Mono
-import reactor.kotlin.core.publisher.switchIfEmpty
 import java.util.UUID
 
 @Service
@@ -18,7 +17,6 @@ class SecureCourseRemoveUseCase(
         courseFetcher.fetchCourseById(id)
             .switchIfEmpty(Mono.error(CourseNotFoundException(id.toString())))
             .flatMap {
-                // TODO check requirements to remove course
                 courseRemover.removeCourse(it.id!!)
             }
 }
