@@ -11,3 +11,12 @@ fun CourseEntity.toCourse(): Course =
         stage = this.stage,
         tuitionFee = this.tuitionFee,
     )
+
+fun Course.toCourseEntity(): CourseEntity =
+    CourseEntity(
+        id = this.id,
+        name = this.name,
+        description = this.description,
+        stage = this.stage,
+        tuitionFee = this.tuitionFee,
+    )

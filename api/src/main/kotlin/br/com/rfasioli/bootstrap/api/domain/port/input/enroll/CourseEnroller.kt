@@ -1,4 +1,4 @@
-package br.com.rfasioli.bootstrap.api.domain.port.input
+package br.com.rfasioli.bootstrap.api.domain.port.input.enroll
 
 import br.com.rfasioli.bootstrap.api.domain.model.Requirement
 import reactor.core.publisher.Mono

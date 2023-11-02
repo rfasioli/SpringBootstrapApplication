@@ -1,4 +1,4 @@
-package br.com.rfasioli.bootstrap.api.adapter.input.web.resources
+package br.com.rfasioli.bootstrap.api.adapter.input.web.resources.enroll
 
 import java.util.UUID
 

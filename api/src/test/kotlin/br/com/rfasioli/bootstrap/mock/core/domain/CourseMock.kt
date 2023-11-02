@@ -14,8 +14,8 @@ private val faker = faker { }
 fun Course.Companion.buildMock(): Course =
     Course(
         id = UUID.randomUUID(),
-        name = faker.rickAndMorty.locations(),
-        description = faker.rickAndMorty.quotes(),
+        name = faker.educator.courseName(),
+        description = faker.educator.subject(),
         stage = fixtureStage(),
         tuitionFee = BigDecimal(fixtureMoney()),
     )

@@ -1,7 +1,7 @@
 package br.com.rfasioli.bootstrap.api.adapter.input.web
 
 import br.com.rfasioli.bootstrap.api.IntegrationTest
-import br.com.rfasioli.bootstrap.api.adapter.input.web.resources.PostCourseEnrollRequest
+import br.com.rfasioli.bootstrap.api.adapter.input.web.resources.enroll.PostCourseEnrollRequest
 import br.com.rfasioli.bootstrap.mock.app.adapters.input.web.resources.buildMock
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
