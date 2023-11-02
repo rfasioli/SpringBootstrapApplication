@@ -1,11 +1,11 @@
-package br.com.rfasioli.bootstrap.api.domain.usecase
+package br.com.rfasioli.bootstrap.api.domain.usecase.enroll
 
 import br.com.rfasioli.bootstrap.api.UnitTest
 import br.com.rfasioli.bootstrap.api.application.exception.EnrollmentNotElegibleException
 import br.com.rfasioli.bootstrap.api.domain.model.Course
 import br.com.rfasioli.bootstrap.api.domain.model.Requirement
-import br.com.rfasioli.bootstrap.api.domain.port.output.CourseFetcher
-import br.com.rfasioli.bootstrap.api.domain.port.output.EnrollmentAnalyzer
+import br.com.rfasioli.bootstrap.api.domain.port.output.course.CourseFetcher
+import br.com.rfasioli.bootstrap.api.domain.port.output.enroll.EnrollmentAnalyzer
 import br.com.rfasioli.bootstrap.mock.core.domain.buildMock
 import io.mockk.every
 import io.mockk.impl.annotations.InjectMockKs

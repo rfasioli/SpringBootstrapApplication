@@ -1,6 +1,6 @@
 package br.com.rfasioli.bootstrap.api.adapter.input.web.mapper
 
-import br.com.rfasioli.bootstrap.api.adapter.input.web.resources.PostCourseEnrollRequest
+import br.com.rfasioli.bootstrap.api.adapter.input.web.resources.enroll.PostCourseEnrollRequest
 import br.com.rfasioli.bootstrap.api.domain.model.Name
 import br.com.rfasioli.bootstrap.api.domain.model.Requirement
 import java.util.UUID

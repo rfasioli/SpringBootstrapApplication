@@ -1,7 +1,7 @@
 package br.com.rfasioli.bootstrap.api.adapter.input.web.springdoc
 
-import br.com.rfasioli.bootstrap.api.adapter.input.web.resources.PostCourseEnrollRequest
-import br.com.rfasioli.bootstrap.api.adapter.input.web.resources.PostCourseEnrollResponse
+import br.com.rfasioli.bootstrap.api.adapter.input.web.resources.enroll.PostCourseEnrollRequest
+import br.com.rfasioli.bootstrap.api.adapter.input.web.resources.enroll.PostCourseEnrollResponse
 import io.swagger.v3.oas.annotations.Operation
 import io.swagger.v3.oas.annotations.tags.Tag
 import reactor.core.publisher.Mono

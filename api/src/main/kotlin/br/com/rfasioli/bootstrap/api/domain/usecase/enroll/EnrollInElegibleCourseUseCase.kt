@@ -1,11 +1,11 @@
-package br.com.rfasioli.bootstrap.api.domain.usecase
+package br.com.rfasioli.bootstrap.api.domain.usecase.enroll
 
 import br.com.rfasioli.bootstrap.api.application.exception.EnrollmentNotElegibleException
 import br.com.rfasioli.bootstrap.api.domain.model.EnrollmentAggregation
 import br.com.rfasioli.bootstrap.api.domain.model.Requirement
-import br.com.rfasioli.bootstrap.api.domain.port.input.CourseEnroller
-import br.com.rfasioli.bootstrap.api.domain.port.output.CourseFetcher
-import br.com.rfasioli.bootstrap.api.domain.port.output.EnrollmentAnalyzer
+import br.com.rfasioli.bootstrap.api.domain.port.input.enroll.CourseEnroller
+import br.com.rfasioli.bootstrap.api.domain.port.output.course.CourseFetcher
+import br.com.rfasioli.bootstrap.api.domain.port.output.enroll.EnrollmentAnalyzer
 import org.springframework.stereotype.Service
 import reactor.core.publisher.Mono
 import java.time.LocalDate
