@@ -4,7 +4,7 @@ import java.math.BigDecimal
 import java.util.UUID
 
 data class Course(
-    val id: UUID? = UUID.randomUUID(),
+    val id: UUID? = null,
     val name: String,
     val description: String,
     val stage: Stage,
