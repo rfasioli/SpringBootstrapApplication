@@ -55,7 +55,7 @@ dependencies {
     implementation("org.springframework.cloud:spring-cloud-stream")
     implementation("org.springframework.cloud:spring-cloud-stream-binder-rabbit")
 
-    implementation("org.springframework.boot:spring-boot-properties-migrator:3.1.5")
+    implementation("org.springframework.boot:spring-boot-properties-migrator:3.2.0")
 
     testImplementation("org.junit.jupiter:junit-jupiter:5.10.1")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
