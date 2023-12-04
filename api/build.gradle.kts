@@ -18,7 +18,7 @@ tasks.jar {
     enabled = false
 }
 
-val archunitVersion = "1.2.0"
+val archunitVersion = "1.2.1"
 val coroutinesVersion = "1.7.3"
 val fixtureVersion = "1.2.0"
 val kotlinFakerVersion = "1.15.0"
