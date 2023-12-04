@@ -24,7 +24,7 @@ val fixtureVersion = "1.2.0"
 val kotlinFakerVersion = "1.15.0"
 val kotlinLoggingVersion = "3.0.5"
 val serializationCoreVersion = "1.6.1"
-val springDocVersion = "2.2.0"
+val springDocVersion = "2.3.0"
 val springmockkVersion = "4.0.2"
 
 dependencies {
