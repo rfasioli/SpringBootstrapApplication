@@ -20,7 +20,7 @@ plugins {
     id("io.spring.dependency-management") version "1.1.4"
 
     id("io.gitlab.arturbosch.detekt") version "1.23.3"
-    id("org.jlleitschuh.gradle.ktlint") version "11.6.1"
+    id("org.jlleitschuh.gradle.ktlint") version "12.0.3"
     id("org.flywaydb.flyway") version "10.0.1"
     id("com.gorylenko.gradle-git-properties") version "2.4.1"
     id("jacoco")
