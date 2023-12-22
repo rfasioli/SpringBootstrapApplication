@@ -16,7 +16,7 @@ plugins {
     kotlin("plugin.noarg") version kotlinVersion
     kotlin("plugin.jpa") version kotlinVersion
 
-    id("org.springframework.boot") version "3.2.0-SNAPSHOT"
+    id("org.springframework.boot") version "3.2.2-SNAPSHOT"
     id("io.spring.dependency-management") version "1.1.4"
 
     id("io.gitlab.arturbosch.detekt") version "1.23.3"
