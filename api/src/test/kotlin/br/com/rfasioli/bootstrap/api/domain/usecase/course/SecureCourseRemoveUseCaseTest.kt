@@ -51,4 +51,20 @@ class SecureCourseRemoveUseCaseTest(
             .then { verify(exactly = 0) { courseRemover.removeCourse(any()) } }
             .expectError(CourseNotFoundException::class.java)
     }
+
+    @Test
+    fun `Should propagate error when error occurs while removing course`() {
+        val registeredCourse = Course.buildMock()
+        val exception = RuntimeException("Error removing course")
+
+        every { courseFetcher.fetchCourseById(registeredCourse.id!!) }
+            .returns(Mono.just(registeredCourse))
+
+        every { courseRemover.removeCourse(registeredCourse.id!!) }
+            .returns(Mono.error(exception))
+
+        StepVerifier.create(secureCourseRemoveUseCase.deleteCourseById(registeredCourse.id!!))
+            .expectErrorMatches { it is RuntimeException && it.message == "Error removing course" }
+            .verify()
+    }
 }

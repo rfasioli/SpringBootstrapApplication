@@ -9,17 +9,17 @@ buildscript {
 }
 
 plugins {
-    val kotlinVersion = "1.9.22"
+    val kotlinVersion = "1.9.23"
 
     kotlin("jvm") version kotlinVersion
     kotlin("plugin.spring") version kotlinVersion
     kotlin("plugin.noarg") version kotlinVersion
     kotlin("plugin.jpa") version kotlinVersion
 
-    id("org.springframework.boot") version "3.2.0"
+    id("org.springframework.boot") version "3.3.1"
     id("io.spring.dependency-management") version "1.1.5"
 
-    id("io.gitlab.arturbosch.detekt") version "1.23.5"
+    id("io.gitlab.arturbosch.detekt") version "1.23.6"
     id("org.jlleitschuh.gradle.ktlint") version "12.1.1"
     id("org.flywaydb.flyway") version "10.15.0"
     id("com.gorylenko.gradle-git-properties") version "2.4.1"

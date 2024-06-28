@@ -48,4 +48,30 @@ internal class FetchCoursesForSelectedStagesUseCaseTest(
             .expectNextCount(expectedQuantity)
             .verifyComplete()
     }
+
+    @ParameterizedTest
+    @EnumSource(Stage::class)
+    fun `Should complete without items when no courses are found for corresponding stages`(stage: Stage) {
+        val stages = listOf(stage)
+
+        every { coursesForStagesFinder.findCoursesByStage(stages) }
+            .returns(Flux.empty())
+
+        StepVerifier.create(fetchCoursesForSelectedStagesUseCase.fetchCoursesByStage(stages))
+            .verifyComplete()
+    }
+
+    @ParameterizedTest
+    @EnumSource(Stage::class)
+    fun `Should propagate error when error occurs while fetching courses for corresponding stages`(stage: Stage) {
+        val stages = listOf(stage)
+        val exception = RuntimeException("Error fetching courses")
+
+        every { coursesForStagesFinder.findCoursesByStage(stages) }
+            .returns(Flux.error(exception))
+
+        StepVerifier.create(fetchCoursesForSelectedStagesUseCase.fetchCoursesByStage(stages))
+            .expectErrorMatches { it is RuntimeException && it.message == "Error fetching courses" }
+            .verify()
+    }
 }
