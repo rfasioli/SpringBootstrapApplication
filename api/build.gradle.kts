@@ -26,6 +26,7 @@ val kotlinLoggingVersion = "3.0.5"
 val serializationCoreVersion = "1.6.3"
 val springDocVersion = "2.5.0"
 val springmockkVersion = "4.0.2"
+val testContainerVersion = "1.19.8"
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
@@ -69,8 +70,8 @@ dependencies {
     testImplementation("io.github.serpro69:kotlin-faker:$kotlinFakerVersion")
     testImplementation("com.appmattus.fixture:fixture:$fixtureVersion")
     testImplementation("com.appmattus.fixture:fixture-generex:$fixtureVersion")
-    testImplementation("com.h2database:h2")
-    testImplementation("io.r2dbc:r2dbc-h2")
+    testImplementation("org.testcontainers:junit-jupiter:$testContainerVersion")
+    testImplementation("org.testcontainers:postgresql:$testContainerVersion")
     testImplementation("org.junit.jupiter:junit-jupiter")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 }
