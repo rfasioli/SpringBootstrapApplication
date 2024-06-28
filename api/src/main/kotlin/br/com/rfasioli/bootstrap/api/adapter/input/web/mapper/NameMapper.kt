@@ -17,6 +17,10 @@ private fun toTriple(source: List<String>): Triple<String, String, String> {
     return Triple(
         source.first(),
         mutableList.joinToString(separator = " "),
-        if (source.size > 1) { source.last() } else { "" },
+        if (source.size > 1) {
+            source.last()
+        } else {
+            ""
+        },
     )
 }

@@ -12,19 +12,13 @@ import java.util.UUID
 @Tag(name = "Course", description = "this API provide methods for operations with Courses")
 interface CoursesResourceSpringdoc {
     @Operation(summary = "Get Courses by Stages")
-    fun getCoursesByStages(
-        stages: List<Stage>,
-    ): Flux<CourseResourceResponse>
+    fun getCoursesByStages(stages: List<Stage>): Flux<CourseResourceResponse>
 
     @Operation(summary = "Get Course by Id")
-    fun getCourseById(
-        id: UUID,
-    ): Mono<CourseResourceResponse>
+    fun getCourseById(id: UUID): Mono<CourseResourceResponse>
 
     @Operation(summary = "Add a Course")
-    fun postCourse(
-        course: CourseResourceResquest,
-    ): Mono<CourseResourceResponse>
+    fun postCourse(course: CourseResourceResquest): Mono<CourseResourceResponse>
 
     @Operation(summary = "Update a Course")
     fun putCourseById(
@@ -33,7 +27,5 @@ interface CoursesResourceSpringdoc {
     ): Mono<CourseResourceResponse>
 
     @Operation(summary = "Get Courses by Stages")
-    fun deleteCourseById(
-        id: UUID,
-    ): Mono<Unit>
+    fun deleteCourseById(id: UUID): Mono<Unit>
 }

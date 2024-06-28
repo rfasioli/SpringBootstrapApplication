@@ -7,7 +7,6 @@ import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.CsvSource
 
 internal class GenderMapperKtTest : UnitTest() {
-
     @ParameterizedTest
     @CsvSource("MALE,MALE", "FEMALE,FEMALE", "FEME,OTHER", ",UNINFORMED")
     fun `Should convert from string to valid Gender`(

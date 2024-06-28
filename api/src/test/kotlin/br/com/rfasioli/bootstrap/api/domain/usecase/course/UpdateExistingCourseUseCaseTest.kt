@@ -21,15 +21,15 @@ class UpdateExistingCourseUseCaseTest(
     @MockK private val courseFetcher: CourseFetcher,
     @MockK private val courseSaver: CourseSaver,
 ) : UnitTest() {
-
     @InjectMockKs
     private lateinit var updateExistingCourseUseCase: UpdateExistingCourseUseCase
 
     @Test
     fun `should update course when it already registered`() {
         val registeredCourse = Course.buildMock()
-        val updatedCourse = registeredCourse
-            .copy(name = faker.educator.courseName())
+        val updatedCourse =
+            registeredCourse
+                .copy(name = faker.educator.courseName())
 
         every { courseFetcher.fetchCourseById(updatedCourse.id!!) }
             .returns(Mono.just(registeredCourse))

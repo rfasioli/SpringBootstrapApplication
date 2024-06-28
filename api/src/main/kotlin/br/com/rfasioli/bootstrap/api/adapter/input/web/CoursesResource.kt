@@ -74,6 +74,5 @@ class CoursesResource(
     @ResponseStatus(HttpStatus.NO_CONTENT)
     override fun deleteCourseById(
         @PathVariable id: UUID,
-    ): Mono<Unit> =
-        courseSecureRemover.deleteCourseById(id)
+    ): Mono<Unit> = courseSecureRemover.deleteCourseById(id)
 }

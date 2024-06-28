@@ -6,10 +6,11 @@ import org.springframework.context.annotation.Configuration
 
 @Configuration
 @OpenAPIDefinition(
-    info = Info(
-        title = "Spring Bootstrap App",
-        version = "1.0",
-        description = "This API provides resources for SDA Bootstrap Application.",
-    ),
+    info =
+        Info(
+            title = "Spring Bootstrap App",
+            version = "1.0",
+            description = "This API provides resources for SDA Bootstrap Application.",
+        ),
 )
 class OpenApiConfig

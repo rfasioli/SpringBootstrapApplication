@@ -9,14 +9,14 @@ buildscript {
 }
 
 plugins {
-    val kotlinVersion = "1.9.21"
+    val kotlinVersion = "1.9.22"
 
     kotlin("jvm") version kotlinVersion
     kotlin("plugin.spring") version kotlinVersion
     kotlin("plugin.noarg") version kotlinVersion
     kotlin("plugin.jpa") version kotlinVersion
 
-    id("org.springframework.boot") version "3.2.0-SNAPSHOT"
+    id("org.springframework.boot") version "3.2.0"
     id("io.spring.dependency-management") version "1.1.5"
 
     id("io.gitlab.arturbosch.detekt") version "1.23.5"
@@ -27,7 +27,7 @@ plugins {
     id("com.palantir.docker") version "0.35.0" apply false
 }
 
-val springCloudVersion = "2022.0.4"
+val springCloudVersion = "2023.0.2"
 
 tasks.bootJar {
     enabled = false
@@ -47,14 +47,14 @@ allprojects {
     version = "0.0.1-SNAPSHOT"
 
     tasks.withType<JavaCompile> {
-        sourceCompatibility = "20"
-        targetCompatibility = "20"
+        sourceCompatibility = "21"
+        targetCompatibility = "21"
     }
 
     tasks.withType<KotlinCompile> {
         kotlinOptions {
             freeCompilerArgs = listOf("-Xjsr305=strict")
-            jvmTarget = "20"
+            jvmTarget = "21"
         }
     }
 }

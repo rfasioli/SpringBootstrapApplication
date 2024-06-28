@@ -18,7 +18,6 @@ import java.util.UUID
 class CoursePersistenceAdapter(
     private val courseRepository: CourseRepository,
 ) : CoursesForStagesFinder, CourseFetcher, CourseSaver, CourseRemover {
-
     override fun findCoursesByStage(stages: List<Stage>): Flux<Course> =
         courseRepository.findByStageIn(stages)
             .map { it.toCourse() }

@@ -24,7 +24,6 @@ import com.tngtech.archunit.library.dependencies.SlicesRuleDefinition
     importOptions = [ImportOption.DoNotIncludeTests::class],
 )
 class CodingRulesTest {
-
     @ArchTest
     private val noAccessToStandardStreams = NO_CLASSES_SHOULD_ACCESS_STANDARD_STREAMS
 
