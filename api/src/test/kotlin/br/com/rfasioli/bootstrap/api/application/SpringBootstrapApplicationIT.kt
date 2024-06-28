@@ -16,14 +16,15 @@ class SpringBootstrapApplicationIT(
 
     @Test
     fun `Should contain all expected beans when application starts`() {
-        val expectedBeans = listOf(
-            "springBootstrapApplication",
-            "coursesResource",
-            "enrollmentResource",
-            "publishEnrollmentAnalysisAdapter",
-            "coursePersistenceAdapter",
-            "courseRepository",
-        )
+        val expectedBeans =
+            listOf(
+                "springBootstrapApplication",
+                "coursesResource",
+                "enrollmentResource",
+                "publishEnrollmentAnalysisAdapter",
+                "coursePersistenceAdapter",
+                "courseRepository",
+            )
 
         expectedBeans.forEach { beanName ->
             assertThat(applicationContext.containsBean(beanName))

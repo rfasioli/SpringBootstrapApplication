@@ -41,7 +41,10 @@ class FindCourseByIdUseCaseTest(
             .returns(Mono.empty())
 
         StepVerifier.create(findCourseByIdUseCase.fetchCourseById(nonExistentCourseId))
-            .expectErrorMatches { it is CourseNotFoundException && it.message?.contains(nonExistentCourseId.toString()) ?: false }
+            .expectErrorMatches {
+                it is CourseNotFoundException &&
+                    it.message?.contains(nonExistentCourseId.toString()) ?: false
+            }
             .verify()
     }
 }
