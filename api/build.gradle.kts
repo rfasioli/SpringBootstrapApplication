@@ -18,13 +18,13 @@ tasks.jar {
     enabled = false
 }
 
-val archunitVersion = "1.2.0"
-val coroutinesVersion = "1.7.3"
+val archunitVersion = "1.3.0"
+val coroutinesVersion = "1.8.1"
 val fixtureVersion = "1.2.0"
 val kotlinFakerVersion = "1.15.0"
 val kotlinLoggingVersion = "3.0.5"
 val serializationCoreVersion = "1.6.3"
-val springDocVersion = "2.2.0"
+val springDocVersion = "2.5.0"
 val springmockkVersion = "4.0.2"
 
 dependencies {

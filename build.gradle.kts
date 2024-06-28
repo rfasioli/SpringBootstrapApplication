@@ -9,7 +9,7 @@ buildscript {
 }
 
 plugins {
-    val kotlinVersion = "1.9.10"
+    val kotlinVersion = "1.9.21"
 
     kotlin("jvm") version kotlinVersion
     kotlin("plugin.spring") version kotlinVersion
@@ -17,10 +17,10 @@ plugins {
     kotlin("plugin.jpa") version kotlinVersion
 
     id("org.springframework.boot") version "3.2.0-SNAPSHOT"
-    id("io.spring.dependency-management") version "1.1.4"
+    id("io.spring.dependency-management") version "1.1.5"
 
-    id("io.gitlab.arturbosch.detekt") version "1.23.3"
-    id("org.jlleitschuh.gradle.ktlint") version "11.6.1"
+    id("io.gitlab.arturbosch.detekt") version "1.23.5"
+    id("org.jlleitschuh.gradle.ktlint") version "12.1.1"
     id("org.flywaydb.flyway") version "10.15.0"
     id("com.gorylenko.gradle-git-properties") version "2.4.1"
     id("jacoco")
