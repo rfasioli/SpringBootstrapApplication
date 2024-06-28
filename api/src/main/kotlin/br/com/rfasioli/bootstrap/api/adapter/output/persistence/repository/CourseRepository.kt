@@ -9,5 +9,5 @@ import java.util.UUID
 
 @Repository
 interface CourseRepository : R2dbcRepository<CourseEntity, UUID> {
-    fun findByStageIn(stages: List<Stage>): Flux<CourseEntity>
+    fun findByStageIn(stages: Collection<Stage>): Flux<CourseEntity>
 }

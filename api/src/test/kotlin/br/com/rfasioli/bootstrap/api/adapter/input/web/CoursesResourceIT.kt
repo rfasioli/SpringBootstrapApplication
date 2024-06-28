@@ -18,40 +18,48 @@ class CoursesResourceIT : IntegrationTest() {
     @Nested
     inner class GetCoursesByStagesTests {
         @Test
-        fun getCoursesByStages() {
+        fun `Should return list of courses when getCoursesByStages is called`() {
+            val stages = listOf(Stage.BERCARIO, Stage.MATERNAL)
+
             webTestClient.get()
                 .uri { uriBuilder ->
                     uriBuilder
                         .path(COURSES_URI)
-                        .queryParam("stages", Stage.BERCARIO.name)
+                        .queryParam("stages", stages)
                         .build()
                 }
+                .accept(MediaType.APPLICATION_JSON)
                 .exchange()
+                // .expectStatus().isOk // FIXME
                 .expectStatus().is5xxServerError
+            // .expectBodyList(CourseResourceResponse::class.java) // FIXME
         }
     }
 
     @Nested
     inner class GetCoursesByIdTests {
         @Test
-        fun getCoursesById() {
+        fun `Should return a course when getCourseById is called`() {
             val id = UUID.randomUUID()
+
             webTestClient.get()
                 .uri { uriBuilder ->
                     uriBuilder
                         .path("$COURSES_URI/$id")
                         .build()
                 }
+                .accept(MediaType.APPLICATION_JSON)
                 .exchange()
                 // .expectStatus().isOk // FIXME
                 .expectStatus().is5xxServerError
+            // .expectBody(CourseResourceResponse::class.java) // FIXME
         }
     }
 
     @Nested
     inner class PostCourseTests {
         @Test
-        fun postCourse() {
+        fun `Should create a new course when postCourse is called`() {
             val course = CourseResourceResquest.buildMock()
 
             webTestClient.post()
@@ -73,7 +81,7 @@ class CoursesResourceIT : IntegrationTest() {
     @Nested
     inner class PutCourseTests {
         @Test
-        fun putCourse() {
+        fun `Should update an existing course when putCourseById is called`() {
             val course = CourseResourceResquest.buildMock()
             val id = UUID.randomUUID()
 
@@ -96,7 +104,7 @@ class CoursesResourceIT : IntegrationTest() {
     @Nested
     inner class DeleteCourseByIdTests {
         @Test
-        fun deleteCoursesById() {
+        fun `Should remove an existing course when deleteCourseById is called`() {
             val id = UUID.randomUUID()
             webTestClient.delete()
                 .uri { uriBuilder ->

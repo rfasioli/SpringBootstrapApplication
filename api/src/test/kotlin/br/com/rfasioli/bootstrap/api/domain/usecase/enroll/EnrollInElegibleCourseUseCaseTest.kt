@@ -63,4 +63,30 @@ internal class EnrollInElegibleCourseUseCaseTest(
             .expectError(EnrollmentNotElegibleException::class.java)
             .verify()
     }
+
+    @Test
+    fun `Should complete without items when course is not found`() {
+        val requirement = Requirement.buildMock()
+
+        every { courseFetcher.fetchCourseById(requirement.course) }
+            .returns(Mono.empty())
+
+        StepVerifier.create(enrollInElegibleCourseUseCase.enroll(requirement))
+            .verifyComplete()
+    }
+
+    @Test
+    fun `Should propagate error when error occurs while fetching course`() {
+        val requirement = Requirement.buildMock()
+        val exception = RuntimeException("Error fetching course")
+
+        every { courseFetcher.fetchCourseById(requirement.course) }
+            .returns(Mono.error(exception))
+
+        StepVerifier.create(enrollInElegibleCourseUseCase.enroll(requirement))
+            .expectErrorMatches {
+                it is RuntimeException && it.message == "Error fetching course"
+            }
+            .verify()
+    }
 }
