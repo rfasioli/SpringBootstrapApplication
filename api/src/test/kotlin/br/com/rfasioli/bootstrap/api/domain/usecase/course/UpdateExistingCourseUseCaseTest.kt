@@ -53,4 +53,21 @@ class UpdateExistingCourseUseCaseTest(
             .then { verify(exactly = 0) { courseSaver.saveCourse(any()) } }
             .expectError(CourseNotFoundException::class.java)
     }
+
+    @Test
+    fun `Should propagate error when error occurs while updating course`() {
+        val registeredCourse = Course.buildMock()
+        val updatedCourse = registeredCourse.copy(name = faker.educator.courseName())
+        val exception = RuntimeException("Error updating course")
+
+        every { courseFetcher.fetchCourseById(updatedCourse.id!!) }
+            .returns(Mono.just(registeredCourse))
+
+        every { courseSaver.saveCourse(updatedCourse) }
+            .returns(Mono.error(exception))
+
+        StepVerifier.create(updateExistingCourseUseCase.updateCourse(updatedCourse))
+            .expectErrorMatches { it is RuntimeException && it.message == "Error updating course" }
+            .verify()
+    }
 }

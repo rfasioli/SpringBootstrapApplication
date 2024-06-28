@@ -4,12 +4,12 @@
 > ser uma referência para estudo de implementações e boas práticas.
 
 ## Dependências
-| Dependência  | Versão   |
-|--------------|----------|
-| Java         | 21       |
-| Kotlin       | 1.9.10   |
-| Spring Boot  | 3.2      |
-| Spring Cloud | 2021.0.1 |
+| Dependência  | Versão    |
+|--------------|-----------|
+| Java         | 21        |
+| Kotlin       | 1.9.22    |
+| Spring Boot  | 3.3       |
+| Spring Cloud | 2023.0.1  |
 
 ## Integrações
 | Software   | Versão | Portas         | Observações                         |

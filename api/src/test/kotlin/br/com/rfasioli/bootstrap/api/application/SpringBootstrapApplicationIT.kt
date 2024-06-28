@@ -13,4 +13,22 @@ class SpringBootstrapApplicationIT(
         assertThat(applicationContext)
             .isNotNull
     }
+
+    @Test
+    fun `Should contain all expected beans when application starts`() {
+        val expectedBeans = listOf(
+            "springBootstrapApplication",
+            "coursesResource",
+            "enrollmentResource",
+            "publishEnrollmentAnalysisAdapter",
+            "coursePersistenceAdapter",
+            "courseRepository",
+        )
+
+        expectedBeans.forEach { beanName ->
+            assertThat(applicationContext.containsBean(beanName))
+                .withFailMessage("Expected bean $beanName to be present, but it was not found")
+                .isTrue()
+        }
+    }
 }
