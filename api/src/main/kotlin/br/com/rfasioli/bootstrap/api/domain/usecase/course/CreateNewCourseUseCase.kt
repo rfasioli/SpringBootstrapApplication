@@ -10,6 +10,5 @@ import reactor.core.publisher.Mono
 class CreateNewCourseUseCase(
     private val courseSaver: CourseSaver,
 ) : CourseCreator {
-    override fun createCourse(course: Course): Mono<Course> =
-        courseSaver.saveCourse(course)
+    override fun createCourse(course: Course): Mono<Course> = courseSaver.saveCourse(course)
 }

@@ -8,7 +8,6 @@ import org.springframework.context.ApplicationContext
 class SpringBootstrapApplicationIT(
     private val applicationContext: ApplicationContext,
 ) : IntegrationTest() {
-
     @Test
     fun `Should context loads when application starts`() {
         assertThat(applicationContext)

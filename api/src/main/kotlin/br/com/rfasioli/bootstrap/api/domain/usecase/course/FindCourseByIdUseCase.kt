@@ -12,7 +12,6 @@ import java.util.UUID
 class FindCourseByIdUseCase(
     private val courseFetcher: CourseFetcher,
 ) : CoursesByIdFinder {
-
     override fun fetchCourseById(id: UUID): Mono<Course> =
         courseFetcher.fetchCourseById(id)
             .switchIfEmpty(Mono.error(CourseNotFoundException(id.toString())))

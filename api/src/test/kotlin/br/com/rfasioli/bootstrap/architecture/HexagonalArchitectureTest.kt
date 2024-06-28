@@ -11,7 +11,6 @@ import com.tngtech.archunit.library.Architectures.layeredArchitecture
     importOptions = [ImportOption.DoNotIncludeTests::class],
 )
 class HexagonalArchitectureTest {
-
     @ArchTest
     val hexagonalArchitectureLayersIsRespected: ArchRule =
         layeredArchitecture().consideringAllDependencies()

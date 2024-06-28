@@ -15,7 +15,6 @@ import reactor.test.StepVerifier
 class FindCourseByIdUseCaseTest(
     @MockK val courseFetcher: CourseFetcher,
 ) : UnitTest() {
-
     @InjectMockKs
     private lateinit var findCourseByIdUseCase: FindCourseByIdUseCase
 

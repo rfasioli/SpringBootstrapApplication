@@ -18,15 +18,12 @@ import kotlin.random.Random
 internal class FetchCoursesForSelectedStagesUseCaseTest(
     @MockK private val coursesForStagesFinder: CoursesForStagesFinder,
 ) : UnitTest() {
-
     @InjectMockKs
     private lateinit var fetchCoursesForSelectedStagesUseCase: FetchCoursesForSelectedStagesUseCase
 
     @ParameterizedTest
     @EnumSource(Stage::class)
-    fun `Should return only one course that matches for corresponding stage`(
-        stage: Stage,
-    ) {
+    fun `Should return only one course that matches for corresponding stage`(stage: Stage) {
         val stages = listOf(stage)
         val expected = Course.buildMock()
 
@@ -40,9 +37,7 @@ internal class FetchCoursesForSelectedStagesUseCaseTest(
 
     @ParameterizedTest
     @EnumSource(Stage::class)
-    fun `Should return courses fetched for corresponding stages`(
-        stage: Stage,
-    ) {
+    fun `Should return courses fetched for corresponding stages`(stage: Stage) {
         val stages = listOf(stage)
         val expectedQuantity = Random.nextLong(until = 100)
 

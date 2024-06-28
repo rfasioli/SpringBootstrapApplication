@@ -20,18 +20,18 @@ internal class EnrollInElegibleCourseUseCaseTest(
     @MockK private val courseFetcher: CourseFetcher,
     @MockK private val enrollmentAnalyser: EnrollmentAnalyzer,
 ) : UnitTest() {
-
     @InjectMockKs
     private lateinit var enrollInElegibleCourseUseCase: EnrollInElegibleCourseUseCase
 
     @Test
     fun `Should send requirement for analysis when course exists and requirement is elegible`() {
         val course = Course.buildMock()
-        val requirement = Requirement.buildMock()
-            .copy(
-                course = course.id!!,
-                birthDate = LocalDate.now().minusYears(course.stage.age.first.toLong()),
-            )
+        val requirement =
+            Requirement.buildMock()
+                .copy(
+                    course = course.id!!,
+                    birthDate = LocalDate.now().minusYears(course.stage.age.first.toLong()),
+                )
 
         every { courseFetcher.fetchCourseById(course.id!!) }
             .returns(Mono.just(course))
@@ -48,11 +48,12 @@ internal class EnrollInElegibleCourseUseCaseTest(
     @Test
     fun `Should throws EnrollmentNotElegibleException when requirement not elegible`() {
         val course = Course.buildMock()
-        val requirement = Requirement.buildMock()
-            .copy(
-                course = course.id!!,
-                birthDate = LocalDate.now(),
-            )
+        val requirement =
+            Requirement.buildMock()
+                .copy(
+                    course = course.id!!,
+                    birthDate = LocalDate.now(),
+                )
 
         every { courseFetcher.fetchCourseById(course.id!!) }
             .returns(Mono.just(course))

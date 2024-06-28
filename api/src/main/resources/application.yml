@@ -10,6 +10,11 @@ spring:
     password: root
     properties:
       schema: bootstrap
+  cloud:
+    stream:
+      kafka:
+        binder:
+          enableObservation: true
 
 server:
   port: 8080

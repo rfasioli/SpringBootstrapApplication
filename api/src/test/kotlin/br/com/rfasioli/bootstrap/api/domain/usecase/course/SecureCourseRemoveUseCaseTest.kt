@@ -19,7 +19,6 @@ class SecureCourseRemoveUseCaseTest(
     @MockK private val courseFetcher: CourseFetcher,
     @MockK private val courseRemover: CourseRemover,
 ) : UnitTest() {
-
     @InjectMockKs
     private lateinit var secureCourseRemoveUseCase: SecureCourseRemoveUseCase
 

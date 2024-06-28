@@ -30,11 +30,8 @@ fun fixtureCpf(): String =
         factory<String> { regexToRandom(cpfRegex) }
     }
 
-fun fixtureGender(): Gender =
-    fixture.asSequence<Gender>().iterator().next()
+fun fixtureGender(): Gender = fixture.asSequence<Gender>().iterator().next()
 
-fun fixtureStage(): Stage =
-    fixture.asSequence<Stage>().iterator().next()
+fun fixtureStage(): Stage = fixture.asSequence<Stage>().iterator().next()
 
-fun fixtureBirthDate(age: Long? = null): LocalDate =
-    LocalDate.now().minusYears(age ?: Random.nextLong(2, 19))
+fun fixtureBirthDate(age: Long? = null): LocalDate = LocalDate.now().minusYears(age ?: Random.nextLong(2, 19))
