@@ -2,15 +2,23 @@ package br.com.rfasioli.bootstrap.api.adapter.input.web
 
 import br.com.rfasioli.bootstrap.api.IntegrationTest
 import br.com.rfasioli.bootstrap.api.adapter.input.web.resources.courses.CourseResourceResquest
+import br.com.rfasioli.bootstrap.api.adapter.output.persistence.mapper.toCourseEntity
+import br.com.rfasioli.bootstrap.api.adapter.output.persistence.repository.CourseRepository
+import br.com.rfasioli.bootstrap.api.domain.model.Course
 import br.com.rfasioli.bootstrap.api.domain.model.Stage
 import br.com.rfasioli.bootstrap.mock.app.adapters.input.web.resources.buildMock
+import br.com.rfasioli.bootstrap.mock.core.domain.buildMock
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.MediaType
 import reactor.core.publisher.Mono
 import java.util.UUID
 
-class CoursesResourceIT : IntegrationTest() {
+class CoursesResourceIT(
+    @Autowired
+    private val courseRepository: CourseRepository,
+) : IntegrationTest() {
     companion object {
         private const val COURSES_URI = "/courses"
     }
@@ -20,6 +28,14 @@ class CoursesResourceIT : IntegrationTest() {
         @Test
         fun `Should return list of courses when getCoursesByStages is called`() {
             val stages = listOf(Stage.BERCARIO, Stage.MATERNAL)
+
+            stages.forEach {
+                courseRepository.save(
+                    Course
+                        .buildMock(it)
+                        .toCourseEntity(),
+                ).block()
+            }
 
             webTestClient.get()
                 .uri { uriBuilder ->
@@ -40,8 +56,15 @@ class CoursesResourceIT : IntegrationTest() {
     inner class GetCoursesByIdTests {
         @Test
         fun `Should return a course when getCourseById is called`() {
-            val id = UUID.randomUUID()
+            // Arrange
+            val expected = Course.buildMock()
+            val id = expected.id
 
+            courseRepository.findAll().log().blockLast()
+
+            courseRepository.save(expected.toCourseEntity()).block()
+
+            // Act & Assert
             webTestClient.get()
                 .uri { uriBuilder ->
                     uriBuilder
@@ -50,8 +73,8 @@ class CoursesResourceIT : IntegrationTest() {
                 }
                 .accept(MediaType.APPLICATION_JSON)
                 .exchange()
-                // .expectStatus().isOk // FIXME
-                .expectStatus().is5xxServerError
+                .expectStatus().isOk // FIXME
+            // .expectStatus().is5xxServerError
             // .expectBody(CourseResourceResponse::class.java) // FIXME
         }
     }
