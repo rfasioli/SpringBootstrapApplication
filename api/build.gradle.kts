@@ -1,9 +1,11 @@
 plugins {
+    kotlin("jvm")
+    kotlin("plugin.jpa")
+    kotlin("plugin.serialization")
+    kotlin("plugin.spring")
+
     id("org.springframework.boot")
     id("jacoco")
-
-    kotlin("jvm")
-    kotlin("plugin.spring")
 }
 
 springBoot {

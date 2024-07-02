@@ -29,6 +29,14 @@ class CoursesResourceIT(
         fun `Should return list of courses when getCoursesByStages is called`() {
             val stages = listOf(Stage.BERCARIO, Stage.MATERNAL)
 
+            stages.forEach {
+                courseRepository.save(
+                    Course
+                        .buildMock(it)
+                        .toCourseEntity(),
+                ).block()
+            }
+
             webTestClient.get()
                 .uri { uriBuilder ->
                     uriBuilder
@@ -66,7 +74,7 @@ class CoursesResourceIT(
                 .accept(MediaType.APPLICATION_JSON)
                 .exchange()
                 .expectStatus().isOk // FIXME
-                //.expectStatus().is5xxServerError
+            // .expectStatus().is5xxServerError
             // .expectBody(CourseResourceResponse::class.java) // FIXME
         }
     }
