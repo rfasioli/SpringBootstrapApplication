@@ -21,7 +21,7 @@ plugins {
 
     id("io.gitlab.arturbosch.detekt") version "1.23.6"
     id("org.jlleitschuh.gradle.ktlint") version "12.1.1"
-    id("org.flywaydb.flyway") version "10.15.0"
+    id("org.flywaydb.flyway") version "10.18.1"
     id("com.gorylenko.gradle-git-properties") version "2.4.1"
     id("jacoco")
     id("com.palantir.docker") version "0.35.0" apply false
