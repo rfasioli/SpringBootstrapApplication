@@ -1,0 +1,6 @@
+# MCP Configuration for GitHub
+version: 1
+provider: github
+repository: rfasioli/SpringBootstrapApplication
+branch: main
+# Adicione outras configurações conforme necessário
