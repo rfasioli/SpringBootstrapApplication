@@ -27,7 +27,7 @@ plugins {
     id("com.palantir.docker") version "0.35.0" apply false
 }
 
-val springCloudVersion = "2023.0.2"
+val springCloudVersion = "2025.0.0"
 
 tasks.bootJar {
     enabled = false
