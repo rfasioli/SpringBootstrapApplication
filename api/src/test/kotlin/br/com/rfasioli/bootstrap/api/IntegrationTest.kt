@@ -1,5 +1,6 @@
 package br.com.rfasioli.bootstrap.api
 
+import PostgresTestcontainerConfiguration
 import br.com.rfasioli.bootstrap.api.application.SpringBootstrapApplication
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.junit.jupiter.api.Tag
@@ -8,6 +9,7 @@ import org.springframework.boot.test.autoconfigure.web.reactive.AutoConfigureWeb
 import org.springframework.boot.test.autoconfigure.web.reactive.AutoConfigureWebTestClient
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.cloud.contract.wiremock.AutoConfigureWireMock
+import org.springframework.context.annotation.Import
 import org.springframework.data.r2dbc.repository.config.EnableR2dbcRepositories
 import org.springframework.test.web.reactive.server.WebTestClient
 
@@ -15,6 +17,7 @@ import org.springframework.test.web.reactive.server.WebTestClient
     webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
     classes = [ SpringBootstrapApplication::class ],
 )
+@Import(PostgresTestcontainerConfiguration::class)
 @EnableR2dbcRepositories("br.com.rfasioli.bootstrap.api.adapter.output.persistence")
 @AutoConfigureWebTestClient
 @AutoConfigureWebFlux

@@ -1,20 +1,12 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-buildscript {
-    repositories {
-        mavenCentral()
-        maven { url = uri("https://repo.spring.io/milestone") }
-        maven { url = uri("https://repo.spring.io/snapshot") }
-    }
-}
-
 plugins {
     val kotlinVersion = "1.9.23"
 
-    kotlin("jvm") version kotlinVersion
-    kotlin("plugin.spring") version kotlinVersion
-    kotlin("plugin.noarg") version kotlinVersion
-    kotlin("plugin.jpa") version kotlinVersion
+    kotlin("jvm") version kotlinVersion apply false
+    kotlin("plugin.jpa") version kotlinVersion apply false
+    kotlin("plugin.serialization") version kotlinVersion apply false
+    kotlin("plugin.spring") version kotlinVersion apply false
 
     id("org.springframework.boot") version "3.3.1"
     id("io.spring.dependency-management") version "1.1.5"
@@ -28,13 +20,6 @@ plugins {
 }
 
 val springCloudVersion = "2023.0.2"
-
-tasks.bootJar {
-    enabled = false
-}
-tasks.jar {
-    enabled = false
-}
 
 allprojects {
     repositories {
@@ -60,12 +45,6 @@ allprojects {
 }
 
 subprojects {
-    repositories {
-        mavenCentral()
-        maven { url = uri("https://repo.spring.io/milestone") }
-        maven { url = uri("https://repo.spring.io/snapshot") }
-    }
-
     apply {
         plugin("io.spring.dependency-management")
         plugin("io.gitlab.arturbosch.detekt")
@@ -77,8 +56,4 @@ subprojects {
             mavenBom("org.springframework.cloud:spring-cloud-dependencies:$springCloudVersion")
         }
     }
-}
-
-dependencies {
-    implementation("org.postgresql:postgresql")
 }
