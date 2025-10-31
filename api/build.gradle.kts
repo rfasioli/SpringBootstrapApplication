@@ -21,7 +21,7 @@ tasks.jar {
 val archunitVersion = "1.3.0"
 val coroutinesVersion = "1.8.1"
 val fixtureVersion = "1.2.0"
-val kotlinFakerVersion = "1.15.0"
+val kotlinFakerVersion = "1.16.0"
 val kotlinLoggingVersion = "3.0.5"
 val serializationCoreVersion = "1.6.3"
 val springDocVersion = "2.5.0"
